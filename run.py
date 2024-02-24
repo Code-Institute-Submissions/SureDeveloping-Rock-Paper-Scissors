@@ -85,8 +85,6 @@ def main_menu(menu_selection, user_name):
             "Paper disproves Spock\n"
             "Spock vaporizes Rock\n"
             "Rock crushes Scissors\n"
-            "Spock vaporizes Rock\n"
-            "Lizard poisons Paper\n"
         )
 
     elif menu_selection == 'Q':

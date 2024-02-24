@@ -30,16 +30,36 @@ def start_game():
     def computer_choice():
         options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         computer_choice = random.choice(options_list)
-        print(computer_choice)
+        print("computer " + computer_choice)
         return computer_choice
 
-    
+    def player_choice(user_name):
+        player_choice = input(f"{user_name}, please choose:\n"
+        "1) for Rock\n" 
+        "2) for Paper\n"
+        "3) for Scissors\n"
+        "4) for Lizard\n"
+        "5) for Spock\n"
+        "Your selection: ")
 
+        while player_choice not in ["1", "2", "3", "4", "5"]:
+            os.system('clear')
+            player_choice = input(f"{user_name}, please choose:\n"
+            "1) for Rock\n" 
+            "2) for Paper\n"
+            "3) for Scissors\n"
+            "4) for Lizard\n"
+            "5) for Spock\n"
+            "Invalid input! Please select again:\n"
+            )
+
+        print("user " + player_choice)
+        return player_choice
+      
+    player_choice(user_name)
     computer_choice()
 
-
-
-def main_menu(menu_selection):
+def main_menu(menu_selection, user_name):
     """ 
     The function provides the selection in the main menu. 
     The valid data input is checked and the game is started, 
@@ -80,4 +100,4 @@ def main_menu(menu_selection):
     else:
         input("Please select P, R or Q. All other entries are not permitted: ").upper()
 
-main_menu(menu_selection)
+main_menu(menu_selection, user_name)

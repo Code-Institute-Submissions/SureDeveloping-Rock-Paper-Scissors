@@ -3,6 +3,8 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 from art import *
+import os
+import random
 
 tprint("Rock-Paper-Scissors",font="clb6x10",chr_ignore=True,)
 tprint("---Extended---",font="hyper",chr_ignore=True)
@@ -52,7 +54,7 @@ def main_menu(menu_selection):
             "Spock vaporizes Rock\n"
             "Lizard poisons Paper\n"
         )
-        
+
     elif menu_selection == 'Q':
         print(f"Thank you {user_name} for playing Rock-Paper-Scissors Extended!\n"
         "I look forward to your next game!\n")

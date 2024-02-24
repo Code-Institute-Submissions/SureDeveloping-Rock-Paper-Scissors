@@ -25,6 +25,20 @@ menu_selection = input(f"{user_name}, to start the game and play press P.\n"
 "To read the rules, press R. \n"
 "If you want to quit the game press Q\n").upper()
 
+
+def start_game():
+    def computer_choice():
+        options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        computer_choice = random.choice(options_list)
+        print(computer_choice)
+        return computer_choice
+
+    
+
+    computer_choice()
+
+
+
 def main_menu(menu_selection):
     """ 
     The function provides the selection in the main menu. 
@@ -61,6 +75,7 @@ def main_menu(menu_selection):
 
     elif  menu_selection == 'P':
         print('P selected')
+        start_game()
         
     else:
         input("Please select P, R or Q. All other entries are not permitted: ").upper()

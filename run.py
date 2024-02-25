@@ -27,33 +27,34 @@ menu_selection = input(f"{user_name}, to start the game and play press P.\n"
 
 
 def start_game():
+    options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
     def computer_choice():
-        options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         computer_choice = random.choice(options_list)
-        print("computer " + computer_choice)
+        print("Computer choose: " + computer_choice)
         return computer_choice
 
     def player_choice(user_name):
-        player_choice = input(f"{user_name}, please choose:\n"
+        player_choice_num = int(input(f"{user_name}, please choose:\n"
         "1) for Rock\n" 
         "2) for Paper\n"
         "3) for Scissors\n"
         "4) for Lizard\n"
         "5) for Spock\n"
-        "Your selection: ")
+        "Your selection: "))-1
 
-        while player_choice not in ["1", "2", "3", "4", "5"]:
+        while player_choice_num < 0 or player_choice_num >= len(options_list):
             os.system('clear')
-            player_choice = input(f"{user_name}, please choose:\n"
+            player_choice_num = int(input(f"{user_name}, please choose:\n"
             "1) for Rock\n" 
             "2) for Paper\n"
             "3) for Scissors\n"
             "4) for Lizard\n"
             "5) for Spock\n"
             "Invalid input! Please select again:\n"
-            )
+            )) - 1
 
-        print("user " + player_choice)
+        player_choice = options_list[player_choice_num]
+        print("You choose: " + player_choice)
         return player_choice
       
     player_choice(user_name)

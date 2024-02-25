@@ -31,7 +31,6 @@ played_games = 0
 drawn_games = 0
 
 def start_game():
-    
     options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
     def computer_choice():
         computer_choice = random.choice(options_list)
@@ -39,29 +38,28 @@ def start_game():
         return computer_choice
 
     def player_choice(user_name):
-        player_choice_num = int(input(f"{user_name}, please choose:\n"
-        "1) for Rock\n" 
-        "2) for Paper\n"
-        "3) for Scissors\n"
-        "4) for Lizard\n"
-        "5) for Spock\n"
-        "Your selection: "))-1
+        options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        while True:
+            try:
+                player_choice_num = int(input(f"{user_name}, please choose:\n"
+                                           "1) for Rock\n" 
+                                           "2) for Paper\n"
+                                           "3) for Scissors\n"
+                                           "4) for Lizard\n"
+                                           "5) for Spock\n"
+                                           "Your selection: "))-1
 
-        while player_choice_num < 0 or player_choice_num >= len(options_list):
-            os.system('clear')
-            player_choice_num = int(input(f"{user_name}, please choose:\n"
-            "1) for Rock\n" 
-            "2) for Paper\n"
-            "3) for Scissors\n"
-            "4) for Lizard\n"
-            "5) for Spock\n"
-            "Invalid input! Please select again:\n"
-            )) - 1
+                if player_choice_num not in range(5):
+                    print("")
+                    raise ValueError("Invalid input. Please enter a number between 1 and 5.")
 
-        player_choice = options_list[player_choice_num]
-        print("You choose: " + player_choice)
-        return player_choice
-
+                player_choice = options_list[player_choice_num]
+                print("You choose: " + player_choice)
+                return player_choice
+            except ValueError as ve:
+                print("")
+                print("Invalid input. Please enter a number between 1 and 5.")
+                
     def find_winner(computer_choice, player_choice):
         global won_games
         global lost_games

@@ -25,8 +25,13 @@ menu_selection = input(f"{user_name}, to start the game and play press P.\n"
 "To read the rules, press R. \n"
 "If you want to quit the game press Q\n").upper()
 
+won_games = 0
+lost_games = 0
+played_games = 0
+drawn_games = 0
 
 def start_game():
+    
     options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
     def computer_choice():
         computer_choice = random.choice(options_list)
@@ -56,9 +61,101 @@ def start_game():
         player_choice = options_list[player_choice_num]
         print("You choose: " + player_choice)
         return player_choice
-      
-    player_choice(user_name)
-    computer_choice()
+
+    def find_winner(computer_choice, player_choice):
+        global won_games
+        global lost_games
+        global played_games
+        global drawn_games
+        if player_choice == computer_choice:
+            print("You have chosen the same thing. The attempt will be repeated.")
+            drawn_games += 1
+            played_games += 1
+            start_game()
+        elif player_choice == "Rock" and computer_choice == "Paper":
+            print("You loose: Paper covers Rock")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Rock" and computer_choice == "Scissors":
+            print("You win: Rock crushes Scissors")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Rock" and computer_choice == "Lizard":
+            print("You win: Rock crushes Lizard")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Rock" and computer_choice == "Spock":
+            print("You loose: Spock vaporizes Rock")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Paper" and computer_choice == "Rock":
+            print("You win: Paper covers Rock")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Paper" and computer_choice == "Scissors":
+            print("You loose: Scissors cuts Paper")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Paper" and computer_choice == "Lizard":
+            print("You loose: Lizard eats Paper")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Paper" and computer_choice == "Spock":
+            print("You win: Paper disproves Spock")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Scissors" and computer_choice == "Rock":
+            print("You loose: Rock crushes Scissors")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Scissors" and computer_choice == "Paper":
+            print("You win: Scissors cuts Paper")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Scissors" and computer_choice == "Lizard":
+            print("You win: Scissors decapitates Lizard")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Scissors" and computer_choice == "Spock":
+            print("You loose: Spock smashes Scissors")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Lizard" and computer_choice == "Rock":
+            print("You loose: Rock crushes Lizard")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Lizard" and computer_choice == "Paper":
+            print("You win: Lizard eats Paper")
+            won_games += 1
+            played_games += 1 
+        elif player_choice == "Lizard" and computer_choice == "Scissors":
+            print("You loose: Scissors decapitates Lizard")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Lizard" and computer_choice == "Spock":
+            print("You win: Lizard poisons Spock")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Spock" and computer_choice == "Rock":
+            print("You win: Spock vaporizes Rock")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Spock" and computer_choice == "Paper":
+            print("You loose: Paper disproves Spock")
+            lost_games += 1
+            played_games += 1
+        elif player_choice == "Spock" and computer_choice == "Scissors":
+            print("You win: Spock smashes Scissors")
+            won_games += 1
+            played_games += 1
+        elif player_choice == "Spock" and computer_choice == "Lizard":
+            print("You loose: Lizard poisons Spock")
+            lost_games += 1
+            played_games += 1
+
+    player_choice_result = player_choice(user_name)
+    computer_choice_result = computer_choice()
+    find_winner(computer_choice_result, player_choice_result)
 
 def main_menu(menu_selection, user_name):
     """ 

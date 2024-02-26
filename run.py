@@ -7,10 +7,7 @@ import os
 import random
 
 tprint("Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
-tprint("Rock-Paper-Scissors", font="chartr", chr_ignore=True,)
-tprint("Extended", font="eftitalic", chr_ignore=True)
-tprint("Extended", font="utopiab", chr_ignore=True)
-tprint("Extended", font="unarmed", chr_ignore=True)
+tprint("-Extended-", font="utopiab", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 

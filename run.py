@@ -155,6 +155,7 @@ def start_game():
     player_choice_result = player_choice(user_name)
     computer_choice_result = computer_choice()
     find_winner(computer_choice_result, player_choice_result)
+    game_end(won_games, lost_games, played_games, drawn_games)
 
 def game_end(won_games, lost_games, played_games, drawn_games):
     print(f"won_games: {won_games}\n"

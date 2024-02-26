@@ -251,6 +251,7 @@ def main_menu(menu_selection, user_name):
             menu_selection = input("If you want to start the game, press P,\n"
                                    "If you do not want to play press Q.\n"
                                    "If you do not want to play press H.\n"
+                                   "If press you want to reloaded the rules press R\n"
                                    "All other entries are not permitted: \n").upper()
             
         elif menu_selection == 'Q':

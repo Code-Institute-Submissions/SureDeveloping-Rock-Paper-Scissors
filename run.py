@@ -6,11 +6,12 @@ from art import *
 import os
 import random
 
-tprint("Rock", font="utopiab", chr_ignore=True,)
-tprint("Paper", font="utopiab", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="moscow", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="thick", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="clr4x6", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="chartr", chr_ignore=True,)
+tprint("Rock-Paper", font="utopiab", chr_ignore=True,)
 tprint("Scissors", font="utopiab", chr_ignore=True,)
-tprint("Rock-Paper-Scissors", font="utopiab", chr_ignore=True,)
-tprint("Rock-Paper-Scissors", font="utopia", chr_ignore=True,)
 tprint("Extended", font="utopiab", chr_ignore=True)
 tprint("Extended", font="unarmed", chr_ignore=True)
 

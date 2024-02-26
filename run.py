@@ -16,7 +16,7 @@ user_name = input("Please enter your Name:\n")
 # method ensures that no numbers are entered
 while not user_name.strip() or not user_name.isalpha():
     user_name = input("The text field must not be left blank"
-                      "and only letters are permitted!\n"
+                      " and only letters are permitted!\n"
                       "Please enter your Name:\n")
 print()
 print(f"{user_name} nice to have you here.\n"

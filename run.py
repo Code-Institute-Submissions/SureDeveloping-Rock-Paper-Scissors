@@ -11,13 +11,13 @@ tprint("---Extended---", font="hyper", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 
-user_name = input("Please enter your Name:")
+user_name = input("Please enter your Name:\n")
 # The strip() method ensures that something has to be entered and the isalpha()
 # method ensures that no numbers are entered
 while not user_name.strip() or not user_name.isalpha():
     print("The text field must not be left blank"
           "and only letters are permitted!")
-user_name = input("Please enter your Name:")
+user_name = input("Please enter your Name:\n")
 print()
 print(f"{user_name} nice to have you here.\n"
       "This is an extension of the classic game Rock-Paper-Scissors.\n"
@@ -195,7 +195,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
           f"drawn_games: {drawn_games}")
     play_again = input("Do you want to play again press P.\n"
                        "If you want to stop, press Q.\n"
-                       "Want to see the highscore list press H.").upper()
+                       "Want to see the highscore list press H.\n").upper()
     if play_again == 'P':
         start_game()
     elif play_again == 'Q':
@@ -206,7 +206,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
         print("selcted H")
     else:
         input("Please select P, Q or H."
-              "All other entries are not permitted: ").upper()
+              "All other entries are not permitted: \n").upper()
 
 
 def main_menu(menu_selection, user_name):
@@ -257,7 +257,7 @@ def main_menu(menu_selection, user_name):
 
     else:
         input("Please select P, R or Q."
-              "All other entries are not permitted: ").upper()
+              "All other entries are not permitted: \n").upper()
 
 
 main_menu(menu_selection, user_name)

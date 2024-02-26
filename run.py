@@ -6,10 +6,13 @@ from art import *
 import os
 import random
 
-tprint("Rock", font="clb6x10", chr_ignore=True,)
-tprint("Paper", font="clb6x10", chr_ignore=True,)
-tprint("Scissors", font="clb6x10", chr_ignore=True,)
-tprint("---Extended---", font="hyper", chr_ignore=True)
+tprint("Rock", font="utopiab", chr_ignore=True,)
+tprint("Paper", font="utopiab", chr_ignore=True,)
+tprint("Scissors", font="utopiab", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="utopiab", chr_ignore=True,)
+tprint("Rock-Paper-Scissors", font="utopia", chr_ignore=True,)
+tprint("Extended", font="utopiab", chr_ignore=True)
+tprint("Extended", font="unarmed", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 

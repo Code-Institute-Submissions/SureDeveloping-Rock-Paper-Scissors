@@ -6,53 +6,72 @@ from art import *
 import os
 import random
 
-tprint("Rock-Paper-Scissors",font="clb6x10",chr_ignore=True,)
-tprint("---Extended---",font="hyper",chr_ignore=True)
+tprint("Rock-Paper-Scissors", font="clb6x10", chr_ignore=True, )
+tprint("---Extended---", font="hyper", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 
 user_name = input("Please enter your Name:")
-# The strip() method ensures that something has to be entered and the isalpha() method ensures that no numbers are entered 
+# The strip() method ensures that something has to be entered and the isalpha()
+# method ensures that no numbers are entered
 while not user_name.strip() or not user_name.isalpha():
-    print("The text field must not be left blank and only letters are permitted!")
-    user_name = input("Please enter your Name:")
+    print("The text field must not be left blank"
+          "and only letters are permitted!")
+user_name = input("Please enter your Name:")
 print()
-print(f"{user_name} nice to have you here. This is an extension of the classic game Rock-Paper-Scissors.\n"
-"Compete against the computer and test your luck!\n"
-)
+print(f"{user_name} nice to have you here.\n"
+      "This is an extension of the classic game Rock-Paper-Scissors.\n"
+      "Compete against the computer and test your luck!\n")
 
 menu_selection = input(f"{user_name}, to start the game and play press P.\n"
-"To read the rules, press R\n"
-"If you want to quit the game press Q.\n"
-"Want to see the highscore list press H.\n").upper()
+                       "To read the rules, press R\n"
+                       "If you want to quit the game press Q.\n"
+                       "Want to see the highscore list press H.\n").upper()
 
 won_games = 0
 lost_games = 0
 played_games = 0
 drawn_games = 0
 
+
 def start_game():
-    options_list =["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+    """
+    The Start game function starts the game.
+    It contains the computer_choice function and
+    the player-choice function and the Find winner function.
+    The next question is asked until the player cancels by pressing quit.
+    """
+    options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+
     def computer_choice():
+        """
+        The random selection of the computer is made here .
+        """
         computer_choice = random.choice(options_list)
         print("Computer choose: " + computer_choice)
         return computer_choice
 
     def player_choice(user_name):
+        """
+        Here the player makes his selection.
+        It is also ensured that non-validated entries are
+        taken into account and handled.
+        """
         options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         while True:
             try:
                 player_choice_num = int(input(f"{user_name}, please choose:\n"
-                                           "1) for Rock\n" 
-                                           "2) for Paper\n"
-                                           "3) for Scissors\n"
-                                           "4) for Lizard\n"
-                                           "5) for Spock\n"
-                                           "Your selection: "))-1
+                                              "1) for Rock\n"
+                                              "2) for Paper\n"
+                                              "3) for Scissors\n"
+                                              "4) for Lizard\n"
+                                              "5) for Spock\n"
+                                              "Your selection: "))-1
 
                 if player_choice_num not in range(5):
                     print("")
-                    raise ValueError("Invalid input. Please enter a number between 1 and 5.")
+                    raise ValueError("Invalid input."
+                                     "Please enter a number between 1 and 5.")
 
                 player_choice = options_list[player_choice_num]
                 print("You choose: " + player_choice)
@@ -60,14 +79,20 @@ def start_game():
             except ValueError as ve:
                 print("")
                 print("Invalid input. Please enter a number between 1 and 5.")
-                
+
     def find_winner(computer_choice, player_choice):
+        """
+        The computer's choice and the player's choice are compared and
+        it is decided who has won.
+        If both answers are the same, the game is played again.
+        """
         global won_games
         global lost_games
         global played_games
         global drawn_games
         if player_choice == computer_choice:
-            print("You have chosen the same thing. The attempt will be repeated.")
+            print("You have chosen the same thing."
+                  "The attempt will be repeated.")
             drawn_games += 1
             played_games += 1
             start_game()
@@ -126,7 +151,7 @@ def start_game():
         elif player_choice == "Lizard" and computer_choice == "Paper":
             print("You win: Lizard eats Paper")
             won_games += 1
-            played_games += 1 
+            played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Scissors":
             print("You loose: Scissors decapitates Lizard")
             lost_games += 1
@@ -157,63 +182,82 @@ def start_game():
     find_winner(computer_choice_result, player_choice_result)
     game_end(won_games, lost_games, played_games, drawn_games)
 
+
 def game_end(won_games, lost_games, played_games, drawn_games):
+    """
+    After each game the player is asked whether he wants to stop,
+    play again or see the highscore list.
+    It also ensures that no invalid entries can be made.
+    """
     print(f"won_games: {won_games}\n"
-        f"lost_games: {lost_games}\n"
-        f"played_games: {played_games}\n"
-        f"drawn_games: {drawn_games}")
+          f"lost_games: {lost_games}\n"
+          f"played_games: {played_games}\n"
+          f"drawn_games: {drawn_games}")
     play_again = input("Do you want to play again press P.\n"
-        "If you want to stop, press Q.\n"
-        "Want to see the highscore list press H.").upper()
+                       "If you want to stop, press Q.\n"
+                       "Want to see the highscore list press H.").upper()
     if play_again == 'P':
         start_game()
     elif play_again == 'Q':
-        print(f"Thank you {user_name} for playing Rock-Paper-Scissors Extended!\n"
-        "I look forward to your next game!\n")
+        print(f"Thank you {user_name} for playing"
+              "Rock-Paper-Scissors Extended!\n"
+              "I look forward to your next game!\n")
     elif play_again == 'H':
         print("selcted H")
     else:
-        input("Please select P, Q or H. All other entries are not permitted: ").upper()
+        input("Please select P, Q or H."
+              "All other entries are not permitted: ").upper()
+
 
 def main_menu(menu_selection, user_name):
-    """ 
-    The function provides the selection in the main menu. 
-    The valid data input is checked and the game is started, 
-    terminated or the rules are displayed according to the user input. 
-    Before the input is called up, the previous entries in the console are deleted 
+    """
+    The function provides the selection in the main menu.
+    The valid data input is checked and the game is started,
+    terminated or the rules are displayed
+    according to the user input.
+    Before the input is called up, the previous
+    entries in the console are deleted.
     """
     os.system('clear')
     if menu_selection == 'R':
-        print("This version of Rock-Paper-Scissors has been made famous by the TV series 'The Big Bang Theory'.\n"
-            "The two additional elements make it less likely that players will choose the same thing, \n"
-            "and providing more variety and excitement.\n"
-            "Rock-Paper-Scissors-Lizard-Spock is a game based on luck. Choose an item Rock, Paper, Scissors, Lizard or Spock.\n"
-            "The computer also makes a random choice. Afterwards it is checked who has won.\n" 
-            "This is displayed and the scrore is counted up. After 10 games you can enter your score in the high score list.\n"
-            "Here is a list of which item wins against which other item.\n"
-            "Scissors cuts Paper\n"
-            "Paper covers Rock\n"
-            "Rock crushes Lizard\n"
-            "Lizard poisons Spock\n"
-            "Spock smashes Scissors\n"
-            "Scissors decapitates Lizard\n"
-            "Lizard eats Paper\n"
-            "Paper disproves Spock\n"
-            "Spock vaporizes Rock\n"
-            "Rock crushes Scissors\n"
-        )
+        print("This version of Rock-Paper-Scissors has been made famous\n"
+              "by the TV series 'The Big Bang Theory'.\n"
+              "The two additional elements make it less likely that players"
+              "will choose the same thing,\n"
+              "and providing more variety and excitement.\n"
+              "Rock-Paper-Scissors-Lizard-Spock is a game based on luck."
+              "Choose an item Rock, Paper, Scissors, Lizard or Spock.\n"
+              "The computer also makes a random choice."
+              "Afterwards it is checked who has won.\n"
+              "This is displayed and the scrore is counted up."
+              "After 10 games you can enter your score in"
+              "the high score list.\n"
+              "Here is a list of which item wins against which other item.\n"
+              "Scissors cuts Paper\n"
+              "Paper covers Rock\n"
+              "Rock crushes Lizard\n"
+              "Lizard poisons Spock\n"
+              "Spock smashes Scissors\n"
+              "Scissors decapitates Lizard\n"
+              "Lizard eats Paper\n"
+              "Paper disproves Spock\n"
+              "Spock vaporizes Rock\n"
+              "Rock crushes Scissors\n")
 
     elif menu_selection == 'Q':
-        print(f"Thank you {user_name} for playing Rock-Paper-Scissors Extended!\n"
-        "I look forward to your next game!\n")
+        print(f"Thank you {user_name} for playing"
+              "Rock-Paper-Scissors Extended!\n"
+              "I look forward to your next game!\n")
 
-    elif  menu_selection == 'P':
+    elif menu_selection == 'P':
         start_game()
-    
-    elif  menu_selection == 'H':
+
+    elif menu_selection == 'H':
         print("selcted H")
-        
+
     else:
-        input("Please select P, R or Q. All other entries are not permitted: ").upper()
+        input("Please select P, R or Q."
+              "All other entries are not permitted: ").upper()
+
 
 main_menu(menu_selection, user_name)

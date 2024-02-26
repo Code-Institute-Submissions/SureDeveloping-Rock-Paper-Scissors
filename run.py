@@ -22,8 +22,9 @@ print(f"{user_name} nice to have you here. This is an extension of the classic g
 )
 
 menu_selection = input(f"{user_name}, to start the game and play press P.\n"
-"To read the rules, press R. \n"
-"If you want to quit the game press Q\n").upper()
+"To read the rules, press R\n"
+"If you want to quit the game press Q.\n"
+"Want to see the highscore list press H.\n").upper()
 
 won_games = 0
 lost_games = 0
@@ -155,6 +156,24 @@ def start_game():
     computer_choice_result = computer_choice()
     find_winner(computer_choice_result, player_choice_result)
 
+def game_end(won_games, lost_games, played_games, drawn_games):
+    print(f"won_games: {won_games}\n"
+        f"lost_games: {lost_games}\n"
+        f"played_games: {played_games}\n"
+        f"drawn_games: {drawn_games}")
+    play_again = input("Do you want to play again press P.\n"
+        "If you want to stop, press Q.\n"
+        "Want to see the highscore list press H.").upper()
+    if play_again == 'P':
+        start_game()
+    elif play_again == 'Q':
+        print(f"Thank you {user_name} for playing Rock-Paper-Scissors Extended!\n"
+        "I look forward to your next game!\n")
+    elif play_again == 'H':
+        print("selcted H")
+    else:
+        input("Please select P, Q or H. All other entries are not permitted: ").upper()
+
 def main_menu(menu_selection, user_name):
     """ 
     The function provides the selection in the main menu. 
@@ -188,8 +207,10 @@ def main_menu(menu_selection, user_name):
         "I look forward to your next game!\n")
 
     elif  menu_selection == 'P':
-        print('P selected')
         start_game()
+    
+    elif  menu_selection == 'H':
+        print("selcted H")
         
     else:
         input("Please select P, R or Q. All other entries are not permitted: ").upper()

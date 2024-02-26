@@ -7,7 +7,7 @@ import os
 import random
 
 tprint(" Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
-tprint(" --Extended--", font="utopiab", chr_ignore=True)
+tprint("  --Extended--", font="utopiab", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 
@@ -222,45 +222,49 @@ def main_menu(menu_selection, user_name):
     entries in the console are deleted.
     """
     os.system('clear')
-    if menu_selection == 'R':
-        print("This version of Rock-Paper-Scissors has been made famous\n"
-              "by the TV series 'The Big Bang Theory'.\n"
-              "The two additional elements make it less likely that players"
-              "will choose the same thing,\n"
-              "and providing more variety and excitement.\n"
-              "Rock-Paper-Scissors-Lizard-Spock is a game based on luck."
-              "Choose an item Rock, Paper, Scissors, Lizard or Spock.\n"
-              "The computer also makes a random choice."
-              "Afterwards it is checked who has won.\n"
-              "This is displayed and the scrore is counted up."
-              "After 10 games you can enter your score in"
-              "the high score list.\n"
-              "Here is a list of which item wins against which other item.\n"
-              "Scissors cuts Paper\n"
-              "Paper covers Rock\n"
-              "Rock crushes Lizard\n"
-              "Lizard poisons Spock\n"
-              "Spock smashes Scissors\n"
-              "Scissors decapitates Lizard\n"
-              "Lizard eats Paper\n"
-              "Paper disproves Spock\n"
-              "Spock vaporizes Rock\n"
-              "Rock crushes Scissors\n")
+    while True:
+        if menu_selection == 'R':
+            print("This version of Rock-Paper-Scissors has been made famous\n"
+                "by the TV series 'The Big Bang Theory'.\n"
+                "The two additional elements make it less likely that players"
+                "will choose the same thing,\n"
+                "and providing more variety and excitement.\n"
+                "Rock-Paper-Scissors-Lizard-Spock is a game based on luck."
+                "Choose an item Rock, Paper, Scissors, Lizard or Spock.\n"
+                "The computer also makes a random choice."
+                "Afterwards it is checked who has won.\n"
+                "This is displayed and the scrore is counted up."
+                "After 10 games you can enter your score in"
+                "the high score list.\n"
+                "Here is a list of which item wins against which other item.\n"
+                "Scissors cuts Paper\n"
+                "Paper covers Rock\n"
+                "Rock crushes Lizard\n"
+                "Lizard poisons Spock\n"
+                "Spock smashes Scissors\n"
+                "Scissors decapitates Lizard\n"
+                "Lizard eats Paper\n"
+                "Paper disproves Spock\n"
+                "Spock vaporizes Rock\n"
+                "Rock crushes Scissors\n")
 
-    elif menu_selection == 'Q':
-        print(f"Thank you {user_name} for playing"
-              "Rock-Paper-Scissors Extended!\n"
-              "I look forward to your next game!\n")
+        elif menu_selection == 'Q':
+            print(f"Thank you {user_name} for playing"
+                "Rock-Paper-Scissors Extended!\n"
+                "I look forward to your next game!\n")
+            break
 
-    elif menu_selection == 'P':
-        start_game()
+        elif menu_selection == 'P':
+            start_game()
+            break
 
-    elif menu_selection == 'H':
-        print("selcted H")
+        elif menu_selection == 'H':
+            print("selcted H")
+            break
 
-    else:
-        input("Please select P, R or Q."
-              "All other entries are not permitted: \n").upper()
+        else:
+            menu_selection = input("Please select P, R or Q."
+                                   "All other entries are not permitted: \n").upper()
 
 
 main_menu(menu_selection, user_name)

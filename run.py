@@ -6,8 +6,8 @@ from art import *
 import os
 import random
 
-tprint("Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
-tprint("-Extended-", font="utopiab", chr_ignore=True)
+tprint(" Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
+tprint(" --Extended--", font="utopiab", chr_ignore=True)
 
 print('Welcome to Rock-Paper-Scissors Extended!\n')
 
@@ -15,9 +15,9 @@ user_name = input("Please enter your Name:\n")
 # The strip() method ensures that something has to be entered and the isalpha()
 # method ensures that no numbers are entered
 while not user_name.strip() or not user_name.isalpha():
-    print("The text field must not be left blank"
-          "and only letters are permitted!")
-user_name = input("Please enter your Name:\n")
+    user_name = input("The text field must not be left blank"
+                      "and only letters are permitted!\n"
+                      "Please enter your Name:\n")
 print()
 print(f"{user_name} nice to have you here.\n"
       "This is an extension of the classic game Rock-Paper-Scissors.\n"
@@ -67,7 +67,7 @@ def start_game():
                                               "4) for Lizard\n"
                                               "5) for Spock\n"
                                               "Your selection: "))-1
-
+                print()
                 if player_choice_num not in range(5):
                     print("")
                     raise ValueError("Invalid input."
@@ -177,6 +177,7 @@ def start_game():
             lost_games += 1
             played_games += 1
 
+    os.system('clear')
     player_choice_result = player_choice(user_name)
     computer_choice_result = computer_choice()
     find_winner(computer_choice_result, player_choice_result)
@@ -189,10 +190,12 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     play again or see the highscore list.
     It also ensures that no invalid entries can be made.
     """
+    print()
     print(f"won_games: {won_games}\n"
           f"lost_games: {lost_games}\n"
           f"played_games: {played_games}\n"
           f"drawn_games: {drawn_games}")
+    print()
     play_again = input("Do you want to play again press P.\n"
                        "If you want to stop, press Q.\n"
                        "Want to see the highscore list press H.\n").upper()

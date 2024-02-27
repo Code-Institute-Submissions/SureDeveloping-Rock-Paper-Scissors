@@ -84,7 +84,7 @@ How this requirements are met:
 ### Flow Chart
 Here are the Flowsharts created with draw.io:
 
-![Flow Chart](images/readme/flowchart-rpsls.png "Flow Chart")
+![Flow Chart](images/flowchart-rpsls.png "Flow Chart")
 
 ### Features
 Start Screen:

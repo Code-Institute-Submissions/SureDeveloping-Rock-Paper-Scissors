@@ -6,6 +6,7 @@ from colorama import Fore, Back
 from art import *
 import os
 import random
+import time
 
 tprint(" Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
 tprint("  --Extended--", font="utopiab", chr_ignore=True)
@@ -25,7 +26,7 @@ print(f"{Fore.YELLOW}{user_name}{Fore.RESET} nice to have you here.\n"
       "Compete against the computer and test your luck!\n")
 
 menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
-                       f"to start the game and play press"
+                       f"to start the game and play press "
                        f"{Fore.MAGENTA}P{Fore.RESET}.\n"
                        f"To read the rules, press "
                        f"{Fore.MAGENTA}R{Fore.RESET}\n"
@@ -231,7 +232,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
             break
         else:
             play_again = input(f"Please select {Fore.MAGENTA}"
-                               f"P, R or Q{Fore.RESET}. "
+                               f"P, H or Q{Fore.RESET}. "
                                "All other entries are not "
                                "permitted: \n").upper()
 
@@ -248,22 +249,22 @@ def main_menu(menu_selection, user_name):
     os.system('clear')
     while True:
         if menu_selection == 'R':
-            print("This version of Rock-Paper-Scissors "
+            rules = ("This version of Rock-Paper-Scissors "
                   "has been made famous\n"
                   "by the TV series "
                   "'The Big Bang Theory'.\n"
                   "The two additional elements make "
-                  "it less likely that players"
+                  "it less likely that players "
                   "will choose the same thing,\n"
                   "and providing more variety and excitement.\n"
                   "Rock-Paper-Scissors-Lizard-Spock is a "
-                  "game based on luck."
+                  "game based on luck. "
                   "Choose an item Rock, Paper, Scissors, "
                   "Lizard or Spock.\n"
-                  "The computer also makes a random choice."
+                  "The computer also makes a random choice. "
                   "Afterwards it is checked who has won.\n"
-                  "This is displayed and the scrore is counted up."
-                  "After 10 games you can enter your score in"
+                  "This is displayed and the scrore is counted up. "
+                  "After 10 games you can enter your score in "
                   "the high score list.\n"
                   "Here is a list of which item wins "
                   "against which other item.\n"
@@ -278,6 +279,12 @@ def main_menu(menu_selection, user_name):
                   "Paper disproves Spock\n"
                   "Spock vaporizes Rock\n"
                   "Rock crushes Scissors\n")
+
+            for char in rules:
+                print(char, end='', flush=True)
+                time.sleep(0.02)
+
+            print()
 
             menu_selection = input("If you want to start the game, press "
                                    f"{Fore.MAGENTA}P{Fore.RESET}.\n"

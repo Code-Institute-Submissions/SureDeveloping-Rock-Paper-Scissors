@@ -198,21 +198,27 @@ def game_end(won_games, lost_games, played_games, drawn_games):
           f"{Fore.BLUE}Played games: {played_games}{Fore.RESET}\n"
           f"{Fore.CYAN}Drawn games: {drawn_games}{Fore.RESET}")
     print()
+
     play_again = input(f"Do you want to play again press {Fore.MAGENTA}P{Fore.RESET}.\n"
-                       f"If you want to stop, press {Fore.MAGENTA}Q{Fore.RESET}.\n"
-                       "Want to see the highscore list press "
-                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
-    if play_again == 'P':
-        start_game()
-    elif play_again == 'Q':
-        print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
-              "Rock-Paper-Scissors Extended!\n"
-              "I look forward to your next game!\n")
-    elif play_again == 'H':
-        print("selcted H")
-    else:
-        input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}."
-              "All other entries are not permitted: \n").upper()
+                        f"If you want to stop, press {Fore.MAGENTA}Q{Fore.RESET}.\n"
+                        "Want to see the highscore list press "
+                        f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
+    while True:
+        if play_again == 'P':
+            start_game()
+            break
+        elif play_again == 'Q':
+            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
+                  "Rock-Paper-Scissors Extended!\n"
+                  "I look forward to your next game!\n")
+            break
+        elif play_again == 'H':
+            print("selcted H")
+        break
+    
+        else:
+            play_again = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}. "
+                "All other entries are not permitted: \n").upper()
 
 
 def main_menu(menu_selection, user_name):
@@ -277,7 +283,7 @@ def main_menu(menu_selection, user_name):
             break
 
         else:
-            menu_selection = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}."
+            menu_selection = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}. "
                                    "All other entries are not permitted: \n").upper()
 
 

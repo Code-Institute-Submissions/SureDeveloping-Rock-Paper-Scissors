@@ -95,11 +95,9 @@ def start_game():
         global played_games
         global drawn_games
         if player_choice == computer_choice:
-            print("You have chosen the same thing."
-                  "The attempt will be repeated.")
+            print("Draw! You have chosen the same item.")
             drawn_games += 1
             played_games += 1
-            start_game()
         elif player_choice == "Rock" and computer_choice == "Paper":
             print(Back.RED+"You loose: Paper covers Rock"+Back.RESET) 
             lost_games += 1

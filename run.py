@@ -2,7 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-from colorama import Fore
+from colorama import Fore, Back
 from art import *
 import os
 import random
@@ -51,7 +51,7 @@ def start_game():
         The random selection of the computer is made here .
         """
         computer_choice = random.choice(options_list)
-        print("Computer choose: " + computer_choice)
+        print(Fore.BLUE+"Computer choose: "+computer_choice+Fore.RESET)
         return computer_choice
 
     def player_choice(user_name):
@@ -78,7 +78,7 @@ def start_game():
                                      "Please enter a number between 1 and 5.")
 
                 player_choice = options_list[player_choice_num]
-                print("You choose: " + player_choice)
+                print(Fore.YELLOW+"You choose: "+player_choice+Fore.RESET)
                 return player_choice
             except ValueError as ve:
                 print("")
@@ -101,83 +101,83 @@ def start_game():
             played_games += 1
             start_game()
         elif player_choice == "Rock" and computer_choice == "Paper":
-            print("You loose: Paper covers Rock")
+            print(Back.RED+"You loose: Paper covers Rock"+Back.RESET) 
             lost_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Scissors":
-            print("You win: Rock crushes Scissors")
+            print(Back.GREEN+ "You win: Rock crushes Scissors"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Lizard":
-            print("You win: Rock crushes Lizard")
+            print(Back.GREEN+ "You win: Rock crushes Lizard"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Spock":
-            print("You loose: Spock vaporizes Rock")
+            print(Back.RED+"You loose: Spock vaporizes Rock"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Rock":
-            print("You win: Paper covers Rock")
+            print(Back.GREEN+ "You win: Paper covers Rock"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Scissors":
-            print("You loose: Scissors cuts Paper")
+            print(Back.RED+"You loose: Scissors cuts Paper"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Lizard":
-            print("You loose: Lizard eats Paper")
+            print(Back.RED+"You loose: Lizard eats Paper"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Spock":
-            print("You win: Paper disproves Spock")
+            print(Back.GREEN+ "You win: Paper disproves Spock"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Rock":
-            print("You loose: Rock crushes Scissors")
+            print(Back.RED+"You loose: Rock crushes Scissors"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Paper":
-            print("You win: Scissors cuts Paper")
+            print(Back.GREEN+ "You win: Scissors cuts Paper"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Lizard":
-            print("You win: Scissors decapitates Lizard")
+            print(Back.GREEN+ "You win: Scissors decapitates Lizard"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Spock":
-            print("You loose: Spock smashes Scissors")
+            print(Back.RED+"You loose: Spock smashes Scissors"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Rock":
-            print("You loose: Rock crushes Lizard")
+            print(Back.RED+"You loose: Rock crushes Lizard"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Paper":
-            print("You win: Lizard eats Paper")
+            print(Back.GREEN+ "You win: Lizard eats Paper"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Scissors":
-            print("You loose: Scissors decapitates Lizard")
+            print(Back.RED+"You loose: Scissors decapitates Lizard"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Spock":
-            print("You win: Lizard poisons Spock")
+            print(Back.GREEN+ "You win: Lizard poisons Spock"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Rock":
-            print("You win: Spock vaporizes Rock")
+            print(Back.GREEN+ "You win: Spock vaporizes Rock"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Paper":
-            print("You loose: Paper disproves Spock")
+            print(Back.RED+"You loose: Paper disproves Spock"+Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Scissors":
-            print("You win: Spock smashes Scissors")
+            print(Back.GREEN+ "You win: Spock smashes Scissors"+Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Lizard":
-            print("You loose: Lizard poisons Spock")
+            print(Back.RED+"You loose: Lizard poisons Spock"+Back.RESET)
             lost_games += 1
             played_games += 1
 
@@ -195,10 +195,10 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     It also ensures that no invalid entries can be made.
     """
     print()
-    print(f"{Fore.GREEN}won_games: {Fore.RESET}{won_games}\n"
-          f"{Fore.RED}lost_games: {Fore.RESET}{lost_games}\n"
-          f"{Fore.BLUE}played_games: {Fore.RESET}{played_games}\n"
-          f"{Fore.CYAN}drawn_games: {Fore.RESET}{drawn_games}")
+    print(f"{Fore.GREEN}Won games: {won_games}{Fore.RESET}\n"
+          f"{Fore.RED}Lost games: {lost_games}{Fore.RESET}\n"
+          f"{Fore.BLUE}Played games: {played_games}{Fore.RESET}\n"
+          f"{Fore.CYAN}Drawn games: {drawn_games}{Fore.RESET}")
     print()
     play_again = input(f"Do you want to play again press {Fore.MAGENTA}P{Fore.RESET}.\n"
                        f"If you want to stop, press {Fore.MAGENTA}Q{Fore.RESET}.\n"
@@ -207,7 +207,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     if play_again == 'P':
         start_game()
     elif play_again == 'Q':
-        print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing"
+        print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
               "Rock-Paper-Scissors Extended!\n"
               "I look forward to your next game!\n")
     elif play_again == 'H':
@@ -265,7 +265,7 @@ def main_menu(menu_selection, user_name):
                                    "All other entries are not permitted: \n").upper()
 
         elif menu_selection == 'Q':
-            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing"
+            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
                    "Rock-Paper-Scissors Extended!\n"
                    "I look forward to your next game!\n")
             break

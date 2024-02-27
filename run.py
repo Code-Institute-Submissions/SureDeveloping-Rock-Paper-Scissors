@@ -214,8 +214,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
             break
         elif play_again == 'H':
             print("selcted H")
-        break
-    
+            break
         else:
             play_again = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}. "
                 "All other entries are not permitted: \n").upper()

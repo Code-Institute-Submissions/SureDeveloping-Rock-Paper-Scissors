@@ -24,12 +24,15 @@ print(f"{Fore.YELLOW}{user_name}{Fore.RESET} nice to have you here.\n"
       "This is an extension of the classic game Rock-Paper-Scissors.\n"
       "Compete against the computer and test your luck!\n")
 
-menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET},"
-                       f"to start the game and play press {Fore.MAGENTA}P{Fore.RESET}.\n"
-                       f"To read the rules, press {Fore.MAGENTA}R{Fore.RESET}\n"
-                       f"If you want to quit the game press {Fore.MAGENTA}Q{Fore.RESET}.\n"
-                       f"Want to see the"
-                       f"highscore list press {Fore.MAGENTA}H{Fore.RESET}.\n").upper()
+menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
+                       f"to start the game and play press"
+                       f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"To read the rules, press "
+                       f"{Fore.MAGENTA}R{Fore.RESET}\n"
+                       f"If you want to quit the game press "
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
+                       f"If you want to see the highscore list press "
+                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
 
 won_games = 0
 lost_games = 0
@@ -63,13 +66,19 @@ def start_game():
         options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         while True:
             try:
-                player_choice_num = int(input(f"{Fore.YELLOW}{user_name}{Fore.RESET},"
+                player_choice_num = int(input(f"{Fore.YELLOW}{user_name}"
+                                              f"{Fore.RESET},"
                                               "please choose:\n"
-                                              f"{Fore.MAGENTA}1){Fore.RESET} for Rock\n"
-                                              f"{Fore.MAGENTA}2){Fore.RESET} for Paper\n"
-                                              f"{Fore.MAGENTA}3){Fore.RESET} for Scissors\n"
-                                              f"{Fore.MAGENTA}4){Fore.RESET} for Lizard\n"
-                                              f"{Fore.MAGENTA}5){Fore.RESET} for Spock\n"
+                                              f"{Fore.MAGENTA}1){Fore.RESET} "
+                                              "for Rock\n"
+                                              f"{Fore.MAGENTA}2){Fore.RESET} "
+                                              "for Paper\n"
+                                              f"{Fore.MAGENTA}3){Fore.RESET} "
+                                              "for Scissors\n"
+                                              f"{Fore.MAGENTA}4){Fore.RESET} "
+                                              "for Lizard\n"
+                                              f"{Fore.MAGENTA}5){Fore.RESET} "
+                                              "for Spock\n"
                                               "Your selection: "))-1
                 print()
                 if player_choice_num not in range(5):
@@ -99,83 +108,85 @@ def start_game():
             drawn_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Paper":
-            print(Back.RED+"You loose: Paper covers Rock"+Back.RESET) 
+            print(Back.RED + "You loose: Paper covers Rock" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Scissors":
-            print(Back.GREEN+ "You win: Rock crushes Scissors"+Back.RESET)
+            print(Back.GREEN + "You win: Rock crushes Scissors" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Lizard":
-            print(Back.GREEN+ "You win: Rock crushes Lizard"+Back.RESET)
+            print(Back.GREEN + "You win: Rock crushes Lizard" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Rock" and computer_choice == "Spock":
-            print(Back.RED+"You loose: Spock vaporizes Rock"+Back.RESET)
+            print(Back.RED + "You loose: Spock vaporizes Rock" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Rock":
-            print(Back.GREEN+ "You win: Paper covers Rock"+Back.RESET)
+            print(Back.GREEN + "You win: Paper covers Rock" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Scissors":
-            print(Back.RED+"You loose: Scissors cuts Paper"+Back.RESET)
+            print(Back.RED + "You loose: Scissors cuts Paper" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Lizard":
-            print(Back.RED+"You loose: Lizard eats Paper"+Back.RESET)
+            print(Back.RED + "You loose: Lizard eats Paper" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Paper" and computer_choice == "Spock":
-            print(Back.GREEN+ "You win: Paper disproves Spock"+Back.RESET)
+            print(Back.GREEN + "You win: Paper disproves Spock" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Rock":
-            print(Back.RED+"You loose: Rock crushes Scissors"+Back.RESET)
+            print(Back.RED + "You loose: Rock crushes Scissors" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Paper":
-            print(Back.GREEN+ "You win: Scissors cuts Paper"+Back.RESET)
+            print(Back.GREEN + "You win: Scissors cuts Paper" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Lizard":
-            print(Back.GREEN+ "You win: Scissors decapitates Lizard"+Back.RESET)
+            print(Back.GREEN + "You win: Scissors "
+                  "decapitates Lizard" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Scissors" and computer_choice == "Spock":
-            print(Back.RED+"You loose: Spock smashes Scissors"+Back.RESET)
+            print(Back.RED + "You loose: Spock smashes Scissors" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Rock":
-            print(Back.RED+"You loose: Rock crushes Lizard"+Back.RESET)
+            print(Back.RED + "You loose: Rock crushes Lizard" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Paper":
-            print(Back.GREEN+ "You win: Lizard eats Paper"+Back.RESET)
+            print(Back.GREEN + "You win: Lizard eats Paper" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Scissors":
-            print(Back.RED+"You loose: Scissors decapitates Lizard"+Back.RESET)
+            print(Back.RED + "You loose: Scissors decapitates "
+                  "Lizard" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Lizard" and computer_choice == "Spock":
-            print(Back.GREEN+ "You win: Lizard poisons Spock"+Back.RESET)
+            print(Back.GREEN + "You win: Lizard poisons Spock" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Rock":
-            print(Back.GREEN+ "You win: Spock vaporizes Rock"+Back.RESET)
+            print(Back.GREEN + "You win: Spock vaporizes Rock" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Paper":
-            print(Back.RED+"You loose: Paper disproves Spock"+Back.RESET)
+            print(Back.RED + "You loose: Paper disproves Spock" + Back.RESET)
             lost_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Scissors":
-            print(Back.GREEN+ "You win: Spock smashes Scissors"+Back.RESET)
+            print(Back.GREEN + "You win: Spock smashes Scissors" + Back.RESET)
             won_games += 1
             played_games += 1
         elif player_choice == "Spock" and computer_choice == "Lizard":
-            print(Back.RED+"You loose: Lizard poisons Spock"+Back.RESET)
+            print(Back.RED + "You loose: Lizard poisons Spock" + Back.RESET)
             lost_games += 1
             played_games += 1
 
@@ -199,16 +210,19 @@ def game_end(won_games, lost_games, played_games, drawn_games):
           f"{Fore.CYAN}Drawn games: {drawn_games}{Fore.RESET}")
     print()
 
-    play_again = input(f"Do you want to play again press {Fore.MAGENTA}P{Fore.RESET}.\n"
-                        f"If you want to stop, press {Fore.MAGENTA}Q{Fore.RESET}.\n"
-                        "Want to see the highscore list press "
-                        f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
+    play_again = input(f"Do you want to play again press "
+                       f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"If you want to stop, press "
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
+                       "Want to see the highscore list press "
+                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
     while True:
         if play_again == 'P':
             start_game()
             break
         elif play_again == 'Q':
-            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
+            print(f"Thank you {Fore.YELLOW}{user_name}"
+                  f"{Fore.RESET} for playing "
                   "Rock-Paper-Scissors Extended!\n"
                   "I look forward to your next game!\n")
             break
@@ -216,8 +230,10 @@ def game_end(won_games, lost_games, played_games, drawn_games):
             print("selcted H")
             break
         else:
-            play_again = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}. "
-                "All other entries are not permitted: \n").upper()
+            play_again = input(f"Please select {Fore.MAGENTA}"
+                               f"P, R or Q{Fore.RESET}. "
+                               "All other entries are not "
+                               "permitted: \n").upper()
 
 
 def main_menu(menu_selection, user_name):
@@ -232,19 +248,25 @@ def main_menu(menu_selection, user_name):
     os.system('clear')
     while True:
         if menu_selection == 'R':
-            print("This version of Rock-Paper-Scissors has been made famous\n"
-                  "by the TV series 'The Big Bang Theory'.\n"
-                  "The two additional elements make it less likely that players"
+            print("This version of Rock-Paper-Scissors "
+                  "has been made famous\n"
+                  "by the TV series "
+                  "'The Big Bang Theory'.\n"
+                  "The two additional elements make "
+                  "it less likely that players"
                   "will choose the same thing,\n"
                   "and providing more variety and excitement.\n"
-                  "Rock-Paper-Scissors-Lizard-Spock is a game based on luck."
-                  "Choose an item Rock, Paper, Scissors, Lizard or Spock.\n"
+                  "Rock-Paper-Scissors-Lizard-Spock is a "
+                  "game based on luck."
+                  "Choose an item Rock, Paper, Scissors, "
+                  "Lizard or Spock.\n"
                   "The computer also makes a random choice."
                   "Afterwards it is checked who has won.\n"
                   "This is displayed and the scrore is counted up."
                   "After 10 games you can enter your score in"
                   "the high score list.\n"
-                  "Here is a list of which item wins against which other item.\n"
+                  "Here is a list of which item wins "
+                  "against which other item.\n"
                   "\n"
                   "Scissors cuts Paper\n"
                   "Paper covers Rock\n"
@@ -263,14 +285,17 @@ def main_menu(menu_selection, user_name):
                                    f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
                                    "If you do not want to play press "
                                    f"{Fore.MAGENTA}H{Fore.RESET}.\n"
-                                   "If press you want to reloaded the rules press "
+                                   "If press you want to reloaded "
+                                   "the rules press "
                                    f"{Fore.MAGENTA}R{Fore.RESET}.\n"
-                                   "All other entries are not permitted: \n").upper()
+                                   "All other entries are not "
+                                   "permitted: \n").upper()
 
         elif menu_selection == 'Q':
-            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing "
-                   "Rock-Paper-Scissors Extended!\n"
-                   "I look forward to your next game!\n")
+            print(f"Thank you {Fore.YELLOW}{user_name}"
+                  f"{Fore.RESET} for playing "
+                  "Rock-Paper-Scissors Extended!\n"
+                  "I look forward to your next game!\n")
             break
 
         elif menu_selection == 'P':
@@ -282,8 +307,10 @@ def main_menu(menu_selection, user_name):
             break
 
         else:
-            menu_selection = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}. "
-                                   "All other entries are not permitted: \n").upper()
+            menu_selection = input(f"Please select {Fore.MAGENTA}"
+                                   f"P, R or Q{Fore.RESET}. "
+                                   "All other entries are not "
+                                   "permitted: \n").upper()
 
 
 main_menu(menu_selection, user_name)

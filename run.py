@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+from colorama import Fore
 from art import *
 import os
 import random
@@ -19,14 +20,16 @@ while not user_name.strip() or not user_name.isalpha():
                       " and only letters are permitted!\n"
                       "Please enter your Name:\n")
 print()
-print(f"{user_name} nice to have you here.\n"
+print(f"{Fore.YELLOW}{user_name}{Fore.RESET} nice to have you here.\n"
       "This is an extension of the classic game Rock-Paper-Scissors.\n"
       "Compete against the computer and test your luck!\n")
 
-menu_selection = input(f"{user_name}, to start the game and play press P.\n"
-                       "To read the rules, press R\n"
-                       "If you want to quit the game press Q.\n"
-                       "Want to see the highscore list press H.\n").upper()
+menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET},"
+                       f"to start the game and play press {Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"To read the rules, press {Fore.MAGENTA}R{Fore.RESET}\n"
+                       f"If you want to quit the game press {Fore.MAGENTA}Q{Fore.RESET}.\n"
+                       f"Want to see the"
+                       f"highscore list press {Fore.MAGENTA}H{Fore.RESET}.\n").upper()
 
 won_games = 0
 lost_games = 0
@@ -60,12 +63,13 @@ def start_game():
         options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         while True:
             try:
-                player_choice_num = int(input(f"{user_name}, please choose:\n"
-                                              "1) for Rock\n"
-                                              "2) for Paper\n"
-                                              "3) for Scissors\n"
-                                              "4) for Lizard\n"
-                                              "5) for Spock\n"
+                player_choice_num = int(input(f"{Fore.YELLOW}{user_name}{Fore.RESET},"
+                                              "please choose:\n"
+                                              f"{Fore.MAGENTA}1){Fore.RESET} for Rock\n"
+                                              f"{Fore.MAGENTA}2){Fore.RESET} for Paper\n"
+                                              f"{Fore.MAGENTA}3){Fore.RESET} for Scissors\n"
+                                              f"{Fore.MAGENTA}4){Fore.RESET} for Lizard\n"
+                                              f"{Fore.MAGENTA}5){Fore.RESET} for Spock\n"
                                               "Your selection: "))-1
                 print()
                 if player_choice_num not in range(5):
@@ -191,24 +195,25 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     It also ensures that no invalid entries can be made.
     """
     print()
-    print(f"won_games: {won_games}\n"
-          f"lost_games: {lost_games}\n"
-          f"played_games: {played_games}\n"
-          f"drawn_games: {drawn_games}")
+    print(f"{Fore.GREEN}won_games: {Fore.RESET}{won_games}\n"
+          f"{Fore.RED}lost_games: {Fore.RESET}{lost_games}\n"
+          f"{Fore.BLUE}played_games: {Fore.RESET}{played_games}\n"
+          f"{Fore.CYAN}drawn_games: {Fore.RESET}{drawn_games}")
     print()
-    play_again = input("Do you want to play again press P.\n"
-                       "If you want to stop, press Q.\n"
-                       "Want to see the highscore list press H.\n").upper()
+    play_again = input(f"Do you want to play again press {Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"If you want to stop, press {Fore.MAGENTA}Q{Fore.RESET}.\n"
+                       "Want to see the highscore list press "
+                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
     if play_again == 'P':
         start_game()
     elif play_again == 'Q':
-        print(f"Thank you {user_name} for playing"
+        print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing"
               "Rock-Paper-Scissors Extended!\n"
               "I look forward to your next game!\n")
     elif play_again == 'H':
         print("selcted H")
     else:
-        input("Please select P, Q or H."
+        input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}."
               "All other entries are not permitted: \n").upper()
 
 
@@ -237,6 +242,7 @@ def main_menu(menu_selection, user_name):
                   "After 10 games you can enter your score in"
                   "the high score list.\n"
                   "Here is a list of which item wins against which other item.\n"
+                  "\n"
                   "Scissors cuts Paper\n"
                   "Paper covers Rock\n"
                   "Rock crushes Lizard\n"
@@ -248,14 +254,18 @@ def main_menu(menu_selection, user_name):
                   "Spock vaporizes Rock\n"
                   "Rock crushes Scissors\n")
 
-            menu_selection = input("If you want to start the game, press P,\n"
-                                   "If you do not want to play press Q.\n"
-                                   "If you do not want to play press H.\n"
-                                   "If press you want to reloaded the rules press R\n"
+            menu_selection = input("If you want to start the game, press "
+                                   f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                                   "If you do not want to play press "
+                                   f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
+                                   "If you do not want to play press "
+                                   f"{Fore.MAGENTA}H{Fore.RESET}.\n"
+                                   "If press you want to reloaded the rules press "
+                                   f"{Fore.MAGENTA}R{Fore.RESET}.\n"
                                    "All other entries are not permitted: \n").upper()
-            
+
         elif menu_selection == 'Q':
-            print(f"Thank you {user_name} for playing"
+            print(f"Thank you {Fore.YELLOW}{user_name}{Fore.RESET} for playing"
                    "Rock-Paper-Scissors Extended!\n"
                    "I look forward to your next game!\n")
             break
@@ -269,7 +279,7 @@ def main_menu(menu_selection, user_name):
             break
 
         else:
-            menu_selection = input("Please select P, R or Q."
+            menu_selection = input(f"Please select {Fore.MAGENTA}P, R or Q{Fore.RESET}."
                                    "All other entries are not permitted: \n").upper()
 
 

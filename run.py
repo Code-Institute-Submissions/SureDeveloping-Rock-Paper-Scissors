@@ -21,13 +21,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('highscore-rpslp')
 
-highscore = SHEET.worksheet('highscore')
-
-data = highscore.get_all_values()
-
-print(data)
-
-
 
 tprint(" Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
 tprint("  --Extended--", font="utopiab", chr_ignore=True)
@@ -60,6 +53,43 @@ won_games = 0
 lost_games = 0
 played_games = 0
 drawn_games = 0
+
+highscore = SHEET.worksheet('highscore')
+
+def update_highscore(user_name, played_games, won_games, lost_games, drawn_games):
+    """
+    A new row is created if no entry has been made since the programme was started. 
+    If there is an entry it will be overwirtten
+    """
+    global highscore
+
+    # Check if data it put the first time into the list
+    if played_games == 1:
+        # A new row is created and the row number is saved in user a variable, 
+        # to be able to overright the data later. 
+        highscore.append_row([user_name, played_games, won_games, lost_games, drawn_games])
+       
+
+    else:
+        # Get number of rows
+        num_rows = len(highscore.get_all_values())
+        
+        # Update data
+        highscore.update_cell(num_rows, 1, user_name)
+        highscore.update_cell(num_rows, 2, played_games)
+        highscore.update_cell(num_rows, 3, won_games)
+        highscore.update_cell(num_rows, 4, lost_games)
+        highscore.update_cell(num_rows, 5, drawn_games)
+
+   
+def print_highscore():
+    """
+    Print the highscore list.
+    """
+    os.system('clear')
+    print("Highscore List:")
+    print(highscore.get_all_values())
+    
 
 
 def start_game():
@@ -232,6 +262,11 @@ def game_end(won_games, lost_games, played_games, drawn_games):
           f"{Fore.CYAN}Drawn games: {drawn_games}{Fore.RESET}")
     print()
 
+    # Update highscore after each game
+    print("Updating highscoure list...")
+    print("")
+    update_highscore(user_name, played_games, won_games, lost_games, drawn_games)
+
     play_again = input(f"Do you want to play again press "
                        f"{Fore.MAGENTA}P{Fore.RESET}.\n"
                        f"If you want to stop, press "
@@ -249,7 +284,10 @@ def game_end(won_games, lost_games, played_games, drawn_games):
                   "I look forward to your next game!\n")
             break
         elif play_again == 'H':
-            print("selcted H")
+            print("Highscore List:")
+            table = highscore.get_all_values()
+            for row in table:
+                print(" | ".join(row))
             break
         else:
             play_again = input(f"Please select {Fore.MAGENTA}"
@@ -331,7 +369,10 @@ def main_menu(menu_selection, user_name):
             break
 
         elif menu_selection == 'H':
-            print("selcted H")
+            print("Highscore List:")
+            table = highscore.get_all_values()
+            for row in table:
+                print(" | ".join(row))
             break
 
         else:

@@ -28,7 +28,7 @@ menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
                        f"To read the rules, press "
                        f"{Fore.MAGENTA}R{Fore.RESET}\n"
                        f"If you want to quit the game press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n")
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n").upper()
                    
 won_games = 0
 lost_games = 0
@@ -208,7 +208,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     play_again = input(f"Do you want to play again press "
                        f"{Fore.MAGENTA}P{Fore.RESET}.\n"
                        f"If you want to stop, press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n")
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n").upper()
 
     while True:
         if play_again == 'P':

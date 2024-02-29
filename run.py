@@ -283,7 +283,7 @@ def main_menu(menu_selection, user_name):
                                    "If you do not want to Quit press "
                                    f"{Back.MAGENTA} Q {Back.RESET}.\n"
                                    "All other entries are not "
-                                   "permitted.r \n").upper()
+                                   "permitted. \n").upper()
 
             rules_displayed = True
 

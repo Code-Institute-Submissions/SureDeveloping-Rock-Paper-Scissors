@@ -123,7 +123,7 @@ Login function:
 
 ## Technologies used
 ### Languages used
-Python is used for the project. For the landingpage HTML, CSS  were used to customised it.
+Python is used for the project. For the landingpage HTML, CSS were used to customised the look.
 ### Software used
 Draw.io - To create a Flow Chart. <br>
 Gitpod - To code the project. <br>
@@ -132,7 +132,7 @@ Github - To store to project. <br>
 Heroku – to deploy the project. <br>
 Ci Python Linter – To validate the python code. <br>
 Deepl - For translating text. <br>
-Birme - To change the image to webp format and reducing the size of the images. <br>  ?????
+Birme - To change the image to webp format and reducing the size of the 
 
 ### Data Moduel
 -	Which data module is used     ??????????

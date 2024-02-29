@@ -1,29 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 from colorama import Fore, Back
 from art import *
-import gspread
-from google.oauth2.service_account import Credentials
 import os
 import random
 import time
-import pandas as pd
-from pprint import pprint
-from prettytable import PrettyTable
-from tabulate import tabulate
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('highscore-rpslp')
 
 
 tprint(" Rock-Paper-Scissors", font="shimrod", chr_ignore=True,)
@@ -49,56 +28,13 @@ menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
                        f"To read the rules, press "
                        f"{Fore.MAGENTA}R{Fore.RESET}\n"
                        f"If you want to quit the game press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
-                       f"If you want to see the highscore list press "
-                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
-
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n")
+                   
 won_games = 0
 lost_games = 0
 played_games = 0
 drawn_games = 0
-
-highscore = SHEET.worksheet('highscore')
-
-def update_highscore(user_name, played_games, won_games, lost_games, drawn_games):
-    """
-    A new row is created if no entry has been made since the programme was started. 
-    If there is an entry it will be overwirtten
-    """
-    global highscore
-
-    # Check if data it put the first time into the list
-    if played_games == 1:
-        # A new row is created and the row number is saved in user a variable, 
-        # to be able to overright the data later. 
-        highscore.append_row([user_name, played_games, won_games, lost_games, drawn_games])
-       
-
-    else:
-        # Get number of rows
-        num_rows = len(highscore.get_all_values())
-        
-        # Update data
-        highscore.update_cell(num_rows, 1, user_name)
-        highscore.update_cell(num_rows, 2, played_games)
-        highscore.update_cell(num_rows, 3, won_games)
-        highscore.update_cell(num_rows, 4, lost_games)
-        highscore.update_cell(num_rows, 5, drawn_games)
-
    
-def print_highscore():
-    """
-    Print the highscore list.
-    """
-    os.system('clear')
-    print("Highscore List:")
-    
-    table = highscore.get_all_values()
-    # Extract headers
-    headers = table.pop(0)  
-    print(tabulate(table, headers=headers, tablefmt='pretty'))
-
-    
 def start_game():
     """
     The Start game function starts the game.
@@ -113,7 +49,7 @@ def start_game():
         The random selection of the computer is made here .
         """
         computer_choice = random.choice(options_list)
-        print(Fore.BLUE+"Computer choose: "+computer_choice+Fore.RESET)
+        print(Fore.BLUE + "Computer choose: " + computer_choice+Fore.RESET)
         return computer_choice
 
     def player_choice(user_name):
@@ -146,7 +82,7 @@ def start_game():
                                      "Please enter a number between 1 and 5.")
 
                 player_choice = options_list[player_choice_num]
-                print(Fore.YELLOW+"You choose: "+player_choice+Fore.RESET)
+                print(Fore.YELLOW+"You choose: " + player_choice+Fore.RESET)
                 return player_choice
             except ValueError as ve:
                 print("")
@@ -269,30 +205,23 @@ def game_end(won_games, lost_games, played_games, drawn_games):
           f"{Fore.CYAN}Drawn games: {drawn_games}{Fore.RESET}")
     print()
 
-    # Update highscore after each game
-    print("Updating highscoure list...")
-    print("")
-    update_highscore(user_name, played_games, won_games, lost_games, drawn_games)
-
     play_again = input(f"Do you want to play again press "
                        f"{Fore.MAGENTA}P{Fore.RESET}.\n"
                        f"If you want to stop, press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
-                       "Want to see the highscore list press "
-                       f"{Fore.MAGENTA}H{Fore.RESET}.\n").upper()
+                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n")
+
     while True:
         if play_again == 'P':
             start_game()
             break
+
         elif play_again == 'Q':
             print(f"Thank you {Fore.YELLOW}{user_name}"
                   f"{Fore.RESET} for playing "
                   "Rock-Paper-Scissors Extended!\n"
                   "I look forward to your next game!\n")
             break
-        elif play_again == 'H':
-            print_highscore()
-
+       
         else:
             play_again = input(f"Please select {Fore.MAGENTA}"
                                f"P, R or Q{Fore.RESET}. "
@@ -351,10 +280,8 @@ def main_menu(menu_selection, user_name):
 
             menu_selection = input("If you want to start the game, press "
                                    f"{Fore.MAGENTA}P{Fore.RESET}.\n"
-                                   "If you do not want to play press "
+                                   "If you do not want to Quit press "
                                    f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
-                                   "If you do not want to play press "
-                                   f"{Fore.MAGENTA}H{Fore.RESET}.\n"
                                    "If press you want to reloaded "
                                    "the rules press "
                                    f"{Fore.MAGENTA}R{Fore.RESET}.\n"
@@ -372,14 +299,10 @@ def main_menu(menu_selection, user_name):
             start_game()
             break
 
-        elif menu_selection == 'H':
-            print_highscore()
-
         else:
             menu_selection = input(f"Please select {Fore.MAGENTA}"
                                    f"P, R or Q{Fore.RESET}. "
                                    "All other entries are not "
                                    "permitted: \n").upper()
-
 
 main_menu(menu_selection, user_name)

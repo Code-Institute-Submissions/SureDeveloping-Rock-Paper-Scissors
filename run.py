@@ -9,6 +9,10 @@ from google.oauth2.service_account import Credentials
 import os
 import random
 import time
+import pandas as pd
+from pprint import pprint
+from prettytable import PrettyTable
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -88,10 +92,13 @@ def print_highscore():
     """
     os.system('clear')
     print("Highscore List:")
-    print(highscore.get_all_values())
     
+    table = highscore.get_all_values()
+    # Extract headers
+    headers = table.pop(0)  
+    print(tabulate(table, headers=headers, tablefmt='pretty'))
 
-
+    
 def start_game():
     """
     The Start game function starts the game.
@@ -284,11 +291,8 @@ def game_end(won_games, lost_games, played_games, drawn_games):
                   "I look forward to your next game!\n")
             break
         elif play_again == 'H':
-            print("Highscore List:")
-            table = highscore.get_all_values()
-            for row in table:
-                print(" | ".join(row))
-            break
+            print_highscore()
+
         else:
             play_again = input(f"Please select {Fore.MAGENTA}"
                                f"P, R or Q{Fore.RESET}. "
@@ -369,11 +373,7 @@ def main_menu(menu_selection, user_name):
             break
 
         elif menu_selection == 'H':
-            print("Highscore List:")
-            table = highscore.get_all_values()
-            for row in table:
-                print(" | ".join(row))
-            break
+            print_highscore()
 
         else:
             menu_selection = input(f"Please select {Fore.MAGENTA}"

@@ -244,6 +244,7 @@ def main_menu(menu_selection, user_name):
     rules_displayed = False
     while True:
         if menu_selection == 'R' and not rules_displayed:
+            os.system('clear')
             rules = ("This version of Rock-Paper-Scissors "
                      "has been made famous by the TV series\n"
                      "'The Big Bang Theory'. "
@@ -288,6 +289,7 @@ def main_menu(menu_selection, user_name):
             rules_displayed = True
 
         elif menu_selection == 'Q':
+            os.system('clear')
             print(f"Thank you {Fore.YELLOW}{user_name}"
                   f"{Fore.RESET} for playing "
                   "Rock-Paper-Scissors Extended!\n"

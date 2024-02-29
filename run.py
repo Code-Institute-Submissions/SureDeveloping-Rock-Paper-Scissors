@@ -224,7 +224,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
        
         else:
             play_again = input(f"Please select {Back.MAGENTA}"
-                               f" P, R or Q {Back.RESET}. "
+                               f" P, or Q {Back.RESET}. "
                                "All other entries are not "
                                "permitted: \n").upper()
 
@@ -239,25 +239,27 @@ def main_menu(menu_selection, user_name):
     entries in the console are deleted.
     """
     os.system('clear')
+    # Make sure the rukes are only printed ones
+    rules_displayed = False
     while True:
-        if menu_selection == 'R':
+        if menu_selection == 'R' and not rules_displayed:
             rules = ("This version of Rock-Paper-Scissors "
                   "has been made famous by the TV series\n"
-                  "'The Big Bang Theory'.\n"
+                  "'The Big Bang Theory'. "
                   "The two additional elements make it less "
                   "likely that players \n"
                   "will choose the same thing and providing"
                   "more variety and excitement.\n"
                   "Rock-Paper-Scissors-Lizard-Spock is a "
                   "game based on luck. "
-                  "Choose an item Rock, Paper, Scissors, "
-                  "Lizard or Spock.\n"
-                  "The computer also makes a random choice. "
-                  "Afterwards it is checked who has won.\n"
-                  "This is displayed and the scrore is counted up. "
-                  "Here is a list of which item wins "
-                  "against which other item.\n"
+                  "Choose an item Rock, Paper, Scissors, \n"
+                  "Lizard or Spock. "
+                  "The computer also makes a random choice.\n"
+                  "Afterwards it is checked who has won. "
+                  "This is displayed and the scrore is counted up.\n"
                   "\n"
+                  "Here is a list of which item " 
+                  "wins against which other item:\n"
                   "Scissors cuts Paper\n"
                   "Paper covers Rock\n"
                   "Rock crushes Lizard\n"
@@ -274,16 +276,15 @@ def main_menu(menu_selection, user_name):
                 time.sleep(0.02)
 
             print()
-
+            
             menu_selection = input("If you want to start the game, press "
                                    f"{Back.MAGENTA} P {Back.RESET}.\n"
                                    "If you do not want to Quit press "
                                    f"{Back.MAGENTA} Q {Back.RESET}.\n"
-                                   "If press you want to reloaded "
-                                   "the rules press "
-                                   f"{Back.MAGENTA} R {Back.RESET}.\n"
                                    "All other entries are not "
                                    "permitted.r \n").upper()
+
+            rules_displayed = True
 
         elif menu_selection == 'Q':
             print(f"Thank you {Fore.YELLOW}{user_name}"
@@ -297,9 +298,14 @@ def main_menu(menu_selection, user_name):
             break
 
         else:
-            menu_selection = input(f"Please select {Back.MAGENTA} "
-                                   f"P, R or Q {Back.RESET}. "
-                                   "All other entries are not "
-                                   "permitted: \n").upper()
+            if rules_displayed:
+                menu_selection = input("fInvalid selection. "
+                                       "Please select {Back.MAGENTA}"
+                                       "P or Q{Back.RESET}.").upper()
+            else:
+                menu_selection = input(f"Please select {Back.MAGENTA} "
+                                       f"P, R or Q {Back.RESET}. "
+                                       "All other entries are not "
+                                       "permitted: \n").upper()
 
 main_menu(menu_selection, user_name)

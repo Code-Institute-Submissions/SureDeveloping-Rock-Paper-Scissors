@@ -63,7 +63,7 @@ def start_game():
         while True:
             try:
                 player_choice_num = int(input(f"{Fore.YELLOW}{user_name}"
-                                              f"{Fore.RESET},"
+                                              f"{Fore.RESET}, "
                                               "please choose:\n"
                                               f"{Back.MAGENTA} 1)"
                                               f"{Back.RESET} for Rock\n"
@@ -217,6 +217,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
             break
 
         elif play_again == 'Q':
+            os.system('clear')
             print(f"Thank you {Fore.YELLOW}{user_name}"
                   f"{Fore.RESET} for playing "
                   "Rock-Paper-Scissors Extended!\n"

@@ -24,11 +24,11 @@ print(f"{Fore.YELLOW}{user_name}{Fore.RESET} nice to have you here.\n"
 
 menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
                        f"to start the game and play press "
-                       f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"{Back.MAGENTA} P {Back.RESET}.\n"
                        f"To read the rules, press "
-                       f"{Fore.MAGENTA}R{Fore.RESET}\n"
+                       f"{Back.MAGENTA } R {Back.RESET}.\n"
                        f"If you want to quit the game press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n").upper()
+                       f"{Back.MAGENTA} Q {Back.RESET}.\n").upper()
                    
 won_games = 0
 lost_games = 0
@@ -64,15 +64,15 @@ def start_game():
                 player_choice_num = int(input(f"{Fore.YELLOW}{user_name}"
                                               f"{Fore.RESET},"
                                               "please choose:\n"
-                                              f"{Fore.MAGENTA}1){Fore.RESET} "
+                                              f"{Back.MAGENTA} 1) {Back.RESET} "
                                               "for Rock\n"
-                                              f"{Fore.MAGENTA}2){Fore.RESET} "
+                                              f"{Back.MAGENTA} 2) {Back.RESET} "
                                               "for Paper\n"
-                                              f"{Fore.MAGENTA}3){Fore.RESET} "
+                                              f"{Back.MAGENTA} 3) {Back.RESET} "
                                               "for Scissors\n"
-                                              f"{Fore.MAGENTA}4){Fore.RESET} "
+                                              f"{Back.MAGENTA} 4) {Back.RESET} "
                                               "for Lizard\n"
-                                              f"{Fore.MAGENTA}5){Fore.RESET} "
+                                              f"{Back.MAGENTA} 5) {Back.RESET} "
                                               "for Spock\n"
                                               "Your selection: "))-1
                 print()
@@ -206,9 +206,9 @@ def game_end(won_games, lost_games, played_games, drawn_games):
     print()
 
     play_again = input(f"Do you want to play again press "
-                       f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                       f"{Back.MAGENTA} P {Back.RESET}.\n"
                        f"If you want to stop, press "
-                       f"{Fore.MAGENTA}Q{Fore.RESET}.\n").upper()
+                       f"{Back.MAGENTA} Q {Back.RESET}.\n").upper()
 
     while True:
         if play_again == 'P':
@@ -223,8 +223,8 @@ def game_end(won_games, lost_games, played_games, drawn_games):
             break
        
         else:
-            play_again = input(f"Please select {Fore.MAGENTA}"
-                               f"P, R or Q{Fore.RESET}. "
+            play_again = input(f"Please select {Back.MAGENTA}"
+                               f" P, R or Q {Back.RESET}. "
                                "All other entries are not "
                                "permitted: \n").upper()
 
@@ -279,14 +279,14 @@ def main_menu(menu_selection, user_name):
             print()
 
             menu_selection = input("If you want to start the game, press "
-                                   f"{Fore.MAGENTA}P{Fore.RESET}.\n"
+                                   f"{Back.MAGENTA} P {Back.RESET}.\n"
                                    "If you do not want to Quit press "
-                                   f"{Fore.MAGENTA}Q{Fore.RESET}.\n"
+                                   f"{Back.MAGENTA} Q {Back.RESET}.\n"
                                    "If press you want to reloaded "
                                    "the rules press "
-                                   f"{Fore.MAGENTA}R{Fore.RESET}.\n"
+                                   f"{Back.MAGENTA} R {Back.RESET}.\n"
                                    "All other entries are not "
-                                   "permitted: \n").upper()
+                                   "permitted.r \n").upper()
 
         elif menu_selection == 'Q':
             print(f"Thank you {Fore.YELLOW}{user_name}"
@@ -300,8 +300,8 @@ def main_menu(menu_selection, user_name):
             break
 
         else:
-            menu_selection = input(f"Please select {Fore.MAGENTA}"
-                                   f"P, R or Q{Fore.RESET}. "
+            menu_selection = input(f"Please select {Back.MAGENTA} "
+                                   f"P, R or Q {Back.RESET}. "
                                    "All other entries are not "
                                    "permitted: \n").upper()
 

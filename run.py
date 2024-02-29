@@ -29,12 +29,13 @@ menu_selection = input(f"{Fore.YELLOW}{user_name}{Fore.RESET}, "
                        f"{Back.MAGENTA } R {Back.RESET}.\n"
                        f"If you want to quit the game press "
                        f"{Back.MAGENTA} Q {Back.RESET}.\n").upper()
-                   
+
 won_games = 0
 lost_games = 0
 played_games = 0
 drawn_games = 0
-   
+
+
 def start_game():
     """
     The Start game function starts the game.
@@ -64,16 +65,16 @@ def start_game():
                 player_choice_num = int(input(f"{Fore.YELLOW}{user_name}"
                                               f"{Fore.RESET},"
                                               "please choose:\n"
-                                              f"{Back.MAGENTA} 1) {Back.RESET} "
-                                              "for Rock\n"
-                                              f"{Back.MAGENTA} 2) {Back.RESET} "
-                                              "for Paper\n"
-                                              f"{Back.MAGENTA} 3) {Back.RESET} "
-                                              "for Scissors\n"
-                                              f"{Back.MAGENTA} 4) {Back.RESET} "
-                                              "for Lizard\n"
-                                              f"{Back.MAGENTA} 5) {Back.RESET} "
-                                              "for Spock\n"
+                                              f"{Back.MAGENTA} 1)"
+                                              f"{Back.RESET} for Rock\n"
+                                              f"{Back.MAGENTA} 2)"
+                                              f"{Back.RESET} for Paper\n"
+                                              f"{Back.MAGENTA} 3)"
+                                              f"{Back.RESET} for Scissors\n"
+                                              f"{Back.MAGENTA} 4)"
+                                              f"{Back.RESET} for Lizard\n"
+                                              f"{Back.MAGENTA} 5)"
+                                              f"{Back.RESET} for Spock\n"
                                               "Your selection: "))-1
                 print()
                 if player_choice_num not in range(5):
@@ -221,7 +222,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
                   "Rock-Paper-Scissors Extended!\n"
                   "I look forward to your next game!\n")
             break
-       
+
         else:
             play_again = input(f"Please select {Back.MAGENTA}"
                                f" P, or Q {Back.RESET}. "
@@ -244,39 +245,39 @@ def main_menu(menu_selection, user_name):
     while True:
         if menu_selection == 'R' and not rules_displayed:
             rules = ("This version of Rock-Paper-Scissors "
-                  "has been made famous by the TV series\n"
-                  "'The Big Bang Theory'. "
-                  "The two additional elements make it less "
-                  "likely that players \n"
-                  "will choose the same thing and providing"
-                  "more variety and excitement.\n"
-                  "Rock-Paper-Scissors-Lizard-Spock is a "
-                  "game based on luck. "
-                  "Choose an item Rock, Paper, Scissors, \n"
-                  "Lizard or Spock. "
-                  "The computer also makes a random choice.\n"
-                  "Afterwards it is checked who has won. "
-                  "This is displayed and the scrore is counted up.\n"
-                  "\n"
-                  "Here is a list of which item " 
-                  "wins against which other item:\n"
-                  "Scissors cuts Paper\n"
-                  "Paper covers Rock\n"
-                  "Rock crushes Lizard\n"
-                  "Lizard poisons Spock\n"
-                  "Spock smashes Scissors\n"
-                  "Scissors decapitates Lizard\n"
-                  "Lizard eats Paper\n"
-                  "Paper disproves Spock\n"
-                  "Spock vaporizes Rock\n"
-                  "Rock crushes Scissors\n")
+                     "has been made famous by the TV series\n"
+                     "'The Big Bang Theory'. "
+                     "The two additional elements make it less "
+                     "likely that \n"
+                     "players will choose the same thing and "
+                     "providing more variety and excitement.\n"
+                     "Rock-Paper-Scissors-Lizard-Spock is a "
+                     "game based on luck. Choose an item Rock, \n"
+                     "Paper, Scissors, Lizard or Spock. "
+                     "The computer also makes a random choice.\n"
+                     "Afterwards it is checked who has won. "
+                     "This is displayed and the scrore is\n"
+                     "counted up."
+                     "\n"
+                     "Here is a list of which item "
+                     "wins against which other item:\n"
+                     "Scissors cuts Paper\n"
+                     "Paper covers Rock\n"
+                     "Rock crushes Lizard\n"
+                     "Lizard poisons Spock\n"
+                     "Spock smashes Scissors\n"
+                     "Scissors decapitates Lizard\n"
+                     "Lizard eats Paper\n"
+                     "Paper disproves Spock\n"
+                     "Spock vaporizes Rock\n"
+                     "Rock crushes Scissors\n")
 
             for char in rules:
                 print(char, end='', flush=True)
                 time.sleep(0.02)
 
             print()
-            
+
             menu_selection = input("If you want to start the game, press "
                                    f"{Back.MAGENTA} P {Back.RESET}.\n"
                                    "If you do not want to Quit press "
@@ -307,5 +308,6 @@ def main_menu(menu_selection, user_name):
                                        f"P, R or Q {Back.RESET}. "
                                        "All other entries are not "
                                        "permitted: \n").upper()
+
 
 main_menu(menu_selection, user_name)

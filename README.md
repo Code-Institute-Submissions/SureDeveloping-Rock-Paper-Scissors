@@ -251,7 +251,8 @@ I had forgotten to add a while loop to the main_menu and the end_game function. 
 - As already described in the flow chart section, I had planned to create a highscore list as a feature in the first release. Unfortunately I had an error in connection with the google API, API error code 429 shortly before the release.  Since it was not foreseeable when exactly google would lower or raise the request limit, this feature will have to be added later. 
 ![API error](images/error-api.png "API error")
 
-- There are no other known unsolved problems.
+- In the code, the terminal is cleared several times to make the program easier to overlook and not to remove more relevant information. This function works perfectly in the console of gitpod. But I noticed that this does not work perfectly in the deployed version. Here you can still scroll up, as you can see in the picture. After consulting with my mentor, I came to the conclusion that this is probably because the console is only emulated in the browser, and therefore does not work perfectly. For this reason I have no solution for this error. 
+![Scrolling error](images/error-scrolling-up.png "Scrolling error")
 
 ## Credits
 ### Code used

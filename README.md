@@ -2,7 +2,9 @@
 Portfolio Project 3 – User SureDeveloping – Code Institute
 
 ## Project overview
+
 ### Introduction to the project
+
 The program created is an online game. It is called Rock-Paper-Scissors Extended. Compared to the classic rock-paper-scissors game, this version has the additional items Lizard and Spock to add more variety to the game. This variant is known from the TV series "The Big Band Theory". The game is based on chance and luck. You can find more information about the general idea of the game on Wikipedia.
 <br>
 [Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of pock paper scissors.<br>
@@ -10,6 +12,7 @@ Here is the link to my Depolyed project:<br>
 [Rock-Paper-Scissors Extended](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to my deployed project.
 
 ### Contents
+
 [Project overview](#project-overview) \
 [Introduction to the project](#introduction-to-the-project) \
 [Contents](#contents) \
@@ -22,6 +25,7 @@ Here is the link to my Depolyed project:<br>
 [Technologies used](#technologies-used) \
 [Languages used](#languages-used) \
 [Software used](#software-used) \
+[Data model](#data-model) \
 [Libraries used](#libraries-used) \
 [Languages used](#languages-used) \
 [Deployment](#deployment) \
@@ -38,6 +42,7 @@ Here is the link to my Depolyed project:<br>
 [Acknowledgments](#acknowledgments)
 
 ### Gameplay
+
 First, the player is asked to enter his name. This allows the computer to address the player directly. When a game has been started, the player chooses by entering a number between the items Rock, Paper, Scissors, Lizard or Spock. At the same time, the computer also selects its object using a random function. The computer then chooses who has won and displays this. 
 
 Here are the criteria according to which the computer chooses:<br>
@@ -55,12 +60,15 @@ Rock crushes Scissors <br>
 The player can play as often as he likes. It is possible to quit the game after each round.
 
 ## User experience (UX)
+
 ### Target audience of the website
+
 - People who like Browsergamers.
 - People who want to pass some free time.
 - People who want to play the game Rock-Paper-Scissors-Lizard-Spock against the computer.
 
 ### User story
+
 As a first time user of the game, you want to:
 - Play a bug-free game.
 - Play a self-explanatory game.
@@ -99,6 +107,7 @@ The reworked flow chart without the highscore feature.
 
 
 ### Features
+
 Start Screen:
  
 On the start screen, the player is greeted with the ASCII font Rock Paper Scissors Extended. You will then be asked to enter your name.
@@ -161,8 +170,10 @@ A login function allows the player to beat and overwrite his old highscore list.
  As a further improvement, sound effects could be added to the game. This would give your player an even better experience and also appeal to the sense of hearing.
 
 ## Technologies used
+
 ### Languages used
 Python is used for the project. For the landingpage HTML, CSS were used to customised the look.
+
 ### Software used
 Draw.io - To create a Flow Chart. <br>
 Gitpod - To code the project. <br>
@@ -171,6 +182,11 @@ Github - To store to project. <br>
 Heroku – to deploy the project. <br>
 Ci Python Linter – To validate the python code. <br>
 Deepl - For translating text. <br>
+
+### Data model
+Data is stored in variables in this project. This includes the user_name which is entered by the player and is also printed in the terminal to address the player by name.<br>
+There are also the global variables won_games, lost_games, played_games, drawn_games.  These are updated after each game round and also printed in the terminal. <br>
+In addition, inputs from the player are processed in the menus.
 
 ### Libraries used
 - colorama: <br>
@@ -189,7 +205,6 @@ The random module is used to let the computer make a random selection between Ro
 The time module is used to make the rule appear slower.
 
 ## Deployment
-
 The project was coded with gitpod, stored on github and then deployed on Heroku. 
 That is how the deployment was done:
 1.  Create a requirements.txt with the terminal comand: pip3 freeze > requirements.txt
@@ -213,11 +228,13 @@ That is how the deployment was done:
 
 ## Testing
 The page was tested on different ways and different errors came to light.
+
 ### Manual testing
 I have tested all input options, valid input and non-valid input by the user. These tests were carried out throughout the entire project process. Finally, no more errors occurred. The detailed error messages to the user are also explained in the features section. A description of the bugs can be found in solved and unsolved bugs.
 
 ### Slack peer groupe rewiew
 I have not yet received an answer.
+
 ### Validator tests
 CI Python Linter:
 Common errors that occurred were: <br>
@@ -255,6 +272,7 @@ I had forgotten to add a while loop to the main_menu and the end_game function. 
 ![Scrolling error](images/error-scrolling-up.png "Scrolling error")
 
 ## Credits
+
 ### Code used
 - I love sandwhiches walkthrough projekt - Here I have oriented myself on how to work with googlesheets. This was necessary for the highscoure function, which, as described in the flowchart chapter, is not yet available in this version. 
 - I have informed and inspired myself about some functions in Youtube tutorials. The videos I watched are listed under Learning materials.

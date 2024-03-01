@@ -185,10 +185,6 @@ The random module is used to let the computer make a random selection between Ro
 The time module is used to make the rule appear slower.
 
 ## Deployment
-Forking???
-Playing on a Local machine or via Gitpod Terminal:     CHECKEN 
-
-
 
 The project was coded with gitpod, stored on github and then deployed on Heroku. 
 That is how the deployment was done:

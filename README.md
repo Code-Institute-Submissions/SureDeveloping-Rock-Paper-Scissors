@@ -3,9 +3,10 @@ Portfolio Project 3 – User SureDeveloping – Code Institute
 
 ## Project overview
 ### Introduction to the project
-The program created is an online game. It is called Rock-Paper-Scissors Extended. Compared to the classic rock-paper-scissors game, this version has the additional items Lizard and Spock to add more variety to the game. This variant is known from the TV series "The Big Band Theory". The game is based on chance and luck. You can find more information about the general idea of the game on Wikipedia.<br>
-[Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of pock paper scissors.
-Here is the link to my Depolyed project:
+The program created is an online game. It is called Rock-Paper-Scissors Extended. Compared to the classic rock-paper-scissors game, this version has the additional items Lizard and Spock to add more variety to the game. This variant is known from the TV series "The Big Band Theory". The game is based on chance and luck. You can find more information about the general idea of the game on Wikipedia.
+<br>
+[Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of pock paper scissors.<br>
+Here is the link to my Depolyed project:<br>
 [Rock-Paper-Scissors Extended](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to my deployed project.
 
 ### Contents
@@ -106,26 +107,27 @@ On the start screen, the player is greeted with the ASCII font Rock Paper Scisso
 
 Only letters are allowed when entering names. If something else is entered or the field is left blank, a message appears: The text field must not be left blank and only letters are permitted!
 
-![Start screen error message](images/start-screen-error.png "Error message when entering a username that is not valid.")
+![Start screen error message](images/error-start-screen.png "Error message when entering a username that is not valid.")
 
 If a valid name has been entered, the player will be addressed personally by name. The program is briefly explained and a menu appears. Here the player can choose what he wants to do next by entering the keys. Entering the letter P starts the game. Entering the letter R takes the player to the rules of the game. If the player enters Q, the game ends.
 
 ![Start menu name entered](images/name-entered.png "Start menu with a valid name has been entered.")
 
-If the input is not valid, meaning everything except P, R or Q, an error message is displayed again. The player is prompted once again to select one of the three options, as other entries are not permitted. 
+If the input is not valid, meaning everything except P, R or Q, whether capitalized or lowercase, an error message is displayed again. The player is prompted once again to select one of the three options, as other entries are not permitted. 
 
 ![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
 
 Rules Screen:
+
 The rules are printed slightly slower using the time method. This way the long text does not appear so abruptly and there is time to read it. At the end of the text, the player can start the game with P or end the program with Q.
 
 ![Rules screen](images/rules-screen.png "Rules screen")
 
-The menu also ensures that only P or Q can be entered. For other entries, the player receives a message that only P or Q are permitted.
+The menu also ensures that only P or Q can be entered. The letters may be upper or lower case. For other entries, the player receives a message that only P or Q are permitted.
 
 ![Rules menu, no valida input](images/error-rules-menu.png "Rules menu, no valid input.")
 
-Play the Game Screen:
+Play Game Screen:
 
 If the player chooses P, the game starts and he is taken to the play screen. By entering a number, the player is asked to choose 1 for Rock, 2 for Paper, 3 for Scissors, 4 for Lizard or 5 for Spock.
 
@@ -136,7 +138,7 @@ If the player enters anything other than a number between 1 and 5, the player is
 ![Play screen, no valida input](images/error-play-screen.png "Play screen, no valid input.")
 
 Once the player has made a valid selection, his choice is compared with that of the computer and the winner is announced. The computer's choice and the player's choice are displayed.  If the player has won, this is displayed. At the same time, he sees an overview of how many rounds he has played, how many he has won and how many he has lost. He can also see how many were undecided. In addition, reasons are always given as to why he won or lost. 
-He is also asked at the end whether he wants to play another round, in which case he should press P, or whether he wants to stop, in which case he should press Q.
+He is also asked at the end whether he wants to play another round, in which case he should press P, or whether he wants to stop, in which case he should press Q. The letters may be upper or lower case.
 
 This is a screen when the player wins:
 ![Win screen](images/you-win.png "Win screen")

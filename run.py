@@ -303,10 +303,12 @@ def main_menu(menu_selection, user_name):
 
         else:
             if rules_displayed:
-                menu_selection = input("fInvalid selection. "
-                                       "Please select {Back.MAGENTA}"
-                                       "P to play or Q to quit"
-                                       "{Back.RESET}.").upper()
+                os.system('clear')
+                menu_selection = input(f"Please select {Back.MAGENTA} "
+                                       f"P to play or Q to quit "
+                                       f"{Back.RESET}. \n"
+                                       "All other entries are not "
+                                       "permitted: \n").upper()
             else:
                 menu_selection = input(f"Please select {Back.MAGENTA} "
                                        f"P to play, R for rules or Q to quit "

@@ -112,12 +112,17 @@ If the input is not valid, meaning everything except P, R or Q, an error message
 
 ![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
 
-
 Rules Screen:
-Once R has been selected on the start screen, the rules are displayed. At the end of the text, the player can start the game or return to the main menu.
-An incorrect letter or number has been entered.
-In this case, a message is displayed to the user that only R or P are permitted in upper or lower case.
-Screenshots ???
+The rules are printed slightly slower using the time method. This way the long text does not appear so abruptly and there is time to read it. At the end of the text, the player can start the game with P or end the program with Q.
+
+![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
+
+This also ensures that only P or Q can be entered. For other entries, the player receives a message that only P or Q are permitted.
+
+![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
+
+
+
 
 Play the Game Screen:
 First, the player is asked to enter a name. 

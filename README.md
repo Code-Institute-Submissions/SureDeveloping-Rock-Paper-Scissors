@@ -106,8 +106,11 @@ Only letters are allowed when entering names. If something else is entered or th
 
 If a valid name has been entered, the player will be addressed personally by name. The program is briefly explained and a menu appears. Here the player can choose what he wants to do next by entering the keys. Entering the letter P starts the game. Entering the letter R takes the player to the rules of the game. If the player enters Q, the game ends.
 
-![Start screen name entered](images/name-entered.png "Image if a valid name has been entered.")
+![Start menu name entered](images/name-entered.png "Start menu with a valid name has been entered.")
 
+If the input is not valid, meaning everything except P, R or Q, an error message is displayed again. The player is prompted once again to select one of the three options, as other entries are not permitted. 
+
+![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
 
 
 Rules Screen:

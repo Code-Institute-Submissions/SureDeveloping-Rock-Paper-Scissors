@@ -95,11 +95,20 @@ The reworked flow chart without the highscore feature.
 
 ### Features
 Start Screen:
-From the start screen, the user can start the game or view the rules. By pressing P starts the game and pressing R takes you to the rules.
-An incorrect letter or number has been entered.
-In this case, a message is displayed to the user that only R or P are permitted in upper or lower case.
+ 
+On the start screen, the player is greeted with the ASCII font Rock Paper Scissors Extended. You will then be asked to enter your name.
 
-Screenshots ???
+![Start screen](images/start-screen.png "Start screen of the program")
+
+Only letters are allowed when entering names. If something else is entered or the field is left blank, a message appears: The text field must not be left blank and only letters are permitted!
+
+![Start screen error message](images/start-screen-error.png "Error message when entering a username that is not valid.")
+
+If a valid name has been entered, the player will be addressed personally by name. The program is briefly explained and a menu appears. Here the player can choose what he wants to do next by entering the keys. Entering the letter P starts the game. Entering the letter R takes the player to the rules of the game. If the player enters Q, the game ends.
+
+![Start screen name entered](images/name-entered.png "Image if a valid name has been entered.")
+
+
 
 Rules Screen:
 Once R has been selected on the start screen, the rules are displayed. At the end of the text, the player can start the game or return to the main menu.

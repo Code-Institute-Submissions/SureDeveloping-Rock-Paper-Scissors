@@ -226,7 +226,7 @@ def game_end(won_games, lost_games, played_games, drawn_games):
 
         else:
             play_again = input(f"Please select {Back.MAGENTA}"
-                               f" P, or Q {Back.RESET}. "
+                               f" P to play, or Q to quit {Back.RESET}. "
                                "All other entries are not "
                                "permitted: \n").upper()
 
@@ -305,10 +305,10 @@ def main_menu(menu_selection, user_name):
             if rules_displayed:
                 menu_selection = input("fInvalid selection. "
                                        "Please select {Back.MAGENTA}"
-                                       "P or Q{Back.RESET}.").upper()
+                                       "P to play or Q to quit{Back.RESET}.").upper()
             else:
                 menu_selection = input(f"Please select {Back.MAGENTA} "
-                                       f"P, R or Q {Back.RESET}. "
+                                       f"P to play, R for rules or Q to quit {Back.RESET}. "
                                        "All other entries are not "
                                        "permitted: \n").upper()
 

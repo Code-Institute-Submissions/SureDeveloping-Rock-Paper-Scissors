@@ -12,10 +12,11 @@ print('Welcome to Rock-Paper-Scissors Extended!\n')
 
 user_name = input("Please enter your Name:\n")
 # The strip() method ensures that something has to be entered and the isalpha()
-# method ensures that no numbers are entered
+# method ensures that only letters can be entered
 while not user_name.strip() or not user_name.isalpha():
-    user_name = input("The text field must not be left blank"
-                      " and only letters are permitted!\n"
+    user_name = input("The input field must not be left blank.\n"
+                      "The user name must not contain any spaces, "
+                      "only letters are permitted!\n"
                       "Please enter your Name:\n")
 print()
 print(f"{Fore.YELLOW}{user_name}{Fore.RESET} nice to have you here.\n"

@@ -30,7 +30,7 @@ The created programme in this project is a Rock Paper Scissors online game. In t
 [Known unsolved bugs](#known-unsolved-bugs) \
 [Credits](#credits) \
 [Code used](#code-used) \
-[Content on the website](#content-on-the-website) \
+[Content for the project](#content-for-the-project) \
 [Learning materials](#learning-materials) \
 [Acknowledgments](#acknowledgments)
 

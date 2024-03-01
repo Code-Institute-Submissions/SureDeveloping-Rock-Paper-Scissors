@@ -3,8 +3,10 @@ Portfolio Project 3 – User SureDeveloping – Code Institute
 
 ## Project overview
 ### Introduction to the project
-The created programme in this project is a Rock Paper Scissors online game. In this created version the items Lizard and Spock have been added to have more variety in the game. This variant is known from the TV series the big band theory. The game is based on chance and luck. It can be played against the computer.More information about the general game idea can be found on Wikipedia.<br>
-[Link to Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of Rock paper scissors.
+The program created is an online game. It is called Rock-Paper-Scissors Extended. Compared to the classic rock-paper-scissors game, this version has the additional items Lizard and Spock to add more variety to the game. This variant is known from the TV series "The Big Band Theory". The game is based on chance and luck. You can find more information about the general idea of the game on Wikipedia.<br>
+[Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of pock paper scissors.
+Here is the link to my Depolyed project:
+[Rock-Paper-Scissors Extended](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to my deployed project.
 
 ### Contents
 [Project overview](#project-overview) \

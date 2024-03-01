@@ -17,7 +17,9 @@ The created programme in this project is a Rock Paper Scissors online game. In t
 [Flow Chart](#flow-chart) \
 [Features](#features) \
 [Technologies used](#technologies-used) \
-[Software and frameworks used](#software-and-frameworks-used) \
+[Languages used](#languages-used) \
+[Software used](#software-used) \
+[Libraries used](#libraries-used) \
 [Languages used](#languages-used) \
 [Deployment](#deployment) \
 [Testing](#testing) \
@@ -115,28 +117,44 @@ If the input is not valid, meaning everything except P, R or Q, an error message
 Rules Screen:
 The rules are printed slightly slower using the time method. This way the long text does not appear so abruptly and there is time to read it. At the end of the text, the player can start the game with P or end the program with Q.
 
-![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
+![Rules screen](images/rules-screen.png "Rules screen")
 
-This also ensures that only P or Q can be entered. For other entries, the player receives a message that only P or Q are permitted.
+The menu also ensures that only P or Q can be entered. For other entries, the player receives a message that only P or Q are permitted.
 
-![Start menu, no valid data entered](images/error-start-menu.png "Start menu, no valid data entered.")
-
-
-
+![Rules menu, no valida input](images/error-rules-menu.png "Rules menu, no valid input.")
 
 Play the Game Screen:
-First, the player is asked to enter a name. 
-Potential errors:
-the name field cannot remain empty:
-checking if the string length is zero
 
-Screenshots ???
+If the player chooses P, the game starts and he is taken to the play screen. By entering a number, the player is asked to choose 1 for Rock, 2 for Paper, 3 for Scissors, 4 for Lizard or 5 for Spock.
+
+![Play screen](images/play-screen.png "Play screen.")
+
+If the player enters anything other than a number between 1 and 5, the player is shown an error message. And he is asked to repeat his entry.
+
+![Play screen, no valida input](images/error-play-screen.png "Play screen, no valid input.")
+
+Once the player has made a valid selection, his choice is compared with that of the computer and the winner is announced. The computer's choice and the player's choice are displayed.  If the player has won, this is displayed. At the same time, he sees an overview of how many rounds he has played, how many he has won and how many he has lost. He can also see how many were undecided. In addition, reasons are always given as to why he won or lost. 
+He is also asked at the end whether he wants to play another round, in which case he should press P, or whether he wants to stop, in which case he should press Q.
+
+This is a screen when the player wins:
+![Win screen](images/you-win.png "Win screen")
+
+This is a screen when the player loses:
+![Loose screen](images/you-loose.png "Loose screen")
+
+This is a screen of a draw:
+![Draw screen](images/draw-screen.png "Draw screen")
+
+When the player selects Q, he will be taken to a farewell screen:
+![Quit screen](images/quit-screen.png "Quit screen")
 
 Future Implementations:
-Sound Effects : 
- - As a further improvement, the game sound effects could be added. This would give your player an even better experience and also appeal to the sense of hearing.
-Login function:
-- A login function allows the player to beat and overwrite his old highscore list. This prevents a player from appearing more than once in the highscore list with the same name.
+- Highscore list: <br>
+As previously mentioned in the Flowsharts section, it was planned to add a highscore list to the game. So you can compare your results with the results of others. You can also see your old entries and results. 
+- Login function: <br>
+A login function allows the player to beat and overwrite his old highscore list. This prevents a player from appearing more than once in the highscore list with the same name.
+- Sound Effects: <br>
+ As a further improvement, sound effects could be added to the game. This would give your player an even better experience and also appeal to the sense of hearing.
 
 ## Technologies used
 ### Languages used
@@ -149,56 +167,73 @@ Github - To store to project. <br>
 Heroku – to deploy the project. <br>
 Ci Python Linter – To validate the python code. <br>
 Deepl - For translating text. <br>
-Birme - To change the image to webp format and reducing the size of the 
 
-### Data Moduel
--	Which data module is used     ??????????
-- Structure of the Modul ??????????
-- How is data stored organized and manipulated????????????
+### Libraries used
+- colorama: <br>
+I used colorama to set color accents in the terminal text. In particular, the permissible values that must be entered by the user were marked here. In addition, changing values were marked. So variables that the computer updates during the game such as rounds played, won, lost and drawn games.
 
-### Libraries
-These libraries were used for this project:
-- Random: To make a random selection of the items of the computer.
-- OS: To clear the terminal so that not too much irrelevant text is displayed
-- Colorama: To add colour to the text
-- Art: To be able to use an ASCII font for the start screen.
+- art: <br>
+The Art librarie was used to provide the start screen with an ASCII font. This makes the start screen more impressive.
+
+- os: <br>
+The os module was used to empty the terminal and make the program navigation clearer. Data that is no longer relevant is removed. 
+
+- random: <br>
+The random module is used to let the computer make a random selection between Rock, Paper, Scissors, Lizard or Spock.
+
+- time: <br>
+The time module is used to make the rule appear slower.
 
 ## Deployment
 Forking???
-Playing on a Local machine or via Gitpod Terminal:     CHECKEN CHECKen!!!!!
-????
-The project was coded with gitpod, stored on github and then deployed on Heroku. That is how the deployment was done:
-1.	Log in to Heroku or create an account if required.
-2.	Click on the New Button on the dashboard in the top right corner.
-3.	Click on "Create new app".
-4.	Select the relevant region. In my case, I chose Europe.
-5.	Click on the "Create app" button.
-6.	Navigate to the settings tab and scroll down to the "Config Vars" section.
-7.	Click "Reveal Config Vars" and enter the "key" as port, the "value" as 8000 and click the "add" button.
-8.	Scroll to the buildpacks and click on " add buildpack," select "Python," and click "Save Changes".
-9.	Repeat step 8 but this time add "node.js" instead of python. 
-o	IMPORTANT First the python buildpack must be displayed, then the pack from node.js. It can be moved via drag and drop. 
-10.	Scroll to settings page, and click on Deploy tab.
-11.	Click on Github as the deployment method.
-12.	Confirm the connection to GitHub.
-13.	Search for the repository name and click on conncet.
-14.	Select one of the deployment types: 
-o	Automatic deployment "Enable Automatic Deploys" or
-o	Manual deployment "Deploy Branch”.
+Playing on a Local machine or via Gitpod Terminal:     CHECKEN 
+
+
+
+The project was coded with gitpod, stored on github and then deployed on Heroku. 
+That is how the deployment was done:
+1.  Create a requirements.txt with the terminal comand: pip3 freeze > requirements.txt
+2.  Pushed the latested code and requirements.txt on to Github.
+3.	Log in to Heroku or create an account first.
+4.	Click on the New Button on the dashboard in the top right corner.
+5.	Click on "Create new app".
+6.	Select the relevant region. In my case, I chose Europe.
+7.  Select an app name that does not yet exist on heroku.
+8.	Click on the "Create app" button.
+9.	Click on the settings tab.
+10.	Scroll to the buildpacks and click on "add buildpack," select "Python," and click "Add Buildpack".
+11.	Repeat last step and add "node.js" buildpack. 
+    IMPORTANT First the python buildpack must be displayed, then the pack from node.js. It can be moved via drag and drop. 
+12.	Click on the deploy tab.
+13.	Click on Github as the deployment method.
+14.	Search for the repository name and click on conncet.
+15.	Select Enable Automatic Deploys"
+16. Click on "Deploy Branch"
+17. Click on the "View" button which leads to the deployed app
 
 ## Testing
 The page was tested on different ways and different errors came to light.
 ### Manual testing
-I tested all the buttons by clicking on them and playing the game several times. This was done during the hole prozess while creating this project and especially at the end. A detailed description of the bugs can be found in solved and unsolved bugs.
+I have tested all input options, valid input and non-valid input by the user. These tests were carried out throughout the entire project process. Finally, no more errors occurred. The detailed error messages to the user are also explained in the features section. A description of the bugs can be found in solved and unsolved bugs.
 
 ### Slack peer groupe rewiew
-James Evans has tested my game and noticed that everything is running well. He also discovered a spelling mistake which I have corrected. 
+I have not yet received an answer.
 ### Validator tests
-PEP8 Linter:
-https://pep8ci.herokuapp.com/
+CI Python Linter:
+Common errors that occurred were: <br>
+E231 missing whitespace afte <br>
+E501 line too long <br>
+W291 trailing whitespace <br>
+E128 continuation line under-indented for visual indent <br>
+E225 missing whitespace around operator <br>
+E302 expected 2 blank lines <br>
+W293 blank line contains whitespace <br>
+E124 closing bracket does not match visual indentation <br>
+E271 multiple spaces after keyword <br>
+W292 no newline at end of file <br>
 
-SCREENSHOT!!!
-
+All bugs could be fixed:
+![CI Python Linter test result](images/ci-python-linter-test.png "CI Python Linter test result")
 
 ### Solved bugs
 I tried to check several conditions at the same time with a while loop. So: "while not player_choice == "1" or not "2" or not" . This was the wrong approach. The player_choice function was modified with a try and expect block.
@@ -208,31 +243,48 @@ At first I had not made the variables won_games, lost_games, played_games and dr
 In addition, I had formatted an f string incorrectly so that the variables were not displayed correctly in the terminal at first. Improving the formatting could fix this.
 
 The ASCII font of the start screen was initially too large for the terminal. This was detected after deployment. By trying several fonts, another suitable combination could be found.
+![ASCII error image](images/error-ascii-font.png "ASCII error image")
 
 I had forgotten to add a while loop to the main_menu and the end_game function. Therefore several wrong user inputs were not handled correctly and the programme stopped. Because of the while loops the user is asked again until the answer is valid.
 
 ### Known unsolved bugs
-- There are no known unsolved problems.
+- As already described in the flow chart section, I had planned to create a highscore list as a feature in the first release. Unfortunately I had an error in connection with the google API, API error code 429 shortly before the release.  Since it was not foreseeable when exactly google would lower or raise the request limit, this feature will have to be added later. 
+![API error](images/error-api.png "API error")
+
+- There are no other known unsolved problems.
+
 ## Credits
 ### Code used
-- I love sandwhiches PP3 - code institute ????
-- ????
+- I love sandwhiches walkthrough projekt - Here I have oriented myself on how to work with googlesheets. This was necessary for the highscoure function, which, as described in the flowchart chapter, is not yet available in this version. 
 - I have informed and inspired myself about some functions in Youtube tutorials. The videos I watched are listed under Learning materials.
+
 ### Content for the project
-The content of this project was written by Stephan Sure.
+The content of this project was written by Stephan Sure. I used wikipedia for general information about the game. The image for the landing page is also from Wikipedia.
+
 ### Learning materials
 - All content from Online Course in Full Stack Software Developmen especially videos about Portfolio Project 3 and ReadME from Code Instituet
-- https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/ - to get a basic idear
-- https://www.youtube.com/watch?v=I9h1c-121Uk&t=37s – Learn about the input function
-- https://www.w3schools.com/python/ref_string_isalpha.asp - Learn about isalpha method
-- https://www.w3schools.com/python/ref_string_strip.asp#gsc.tab=0 - learn about the string method
-- https://www.python-lernen.de/python-modul-os.htm - learn about the os module
-- https://www.geeksforgeeks.org/clear-screen-python/ - learn about the os module
-- https://www.youtube.com/watch?v=HcqgHbvN0EQ - learn about the random module
-- https://www.youtube.com/watch?v=46yolPy-2VQ - basic information on python
-- https://stackoverflow.com/
-- geekforgeeks
-- W3Schools
+
+- [thehelloworldprogram](https://thehelloworldprogram.com/python/python-game-rock-paper-scissors/ ) To get a basic idea about the program
+
+- [W3Schools](https://www.youtube.com/watch?v=I9h1c-121Uk&t=37s ) Information about the input function
+
+- [W3Schools](https://www.w3schools.com/python/ref_string_isalpha.asp ) Information on the isalpha method
+
+- [W3Schools](https://www.w3schools.com/python/ref_string_strip.asp#gsc.tab=0 ) Information on the string method
+
+- [python-lernen](www.python-lernen.de/python-modul-os.htm) Information on the os module
+
+- [geekforgeeks](www.geeksforgeeks.org/clear-screen-python/) Information on the os module
+
+- [youtube](https://www.youtube.com/watch?v=HcqgHbvN0EQ) Leads to youtube, with a video about the random module
+
+- [youtube](https://www.youtube.com/watch?v=46yolPy-2VQ) Leads to youtube, with a video with basic information on python
+
+- [stackoverflow](https://stackoverflow.com) Leads to stackoverflow website.
+
+- [W3Schools](https://www.w3schools.com/python/) Leads to W3Schools website.
+- [geekforgeeks](https://www.geeksforgeeks.org/python-programming-language/) Leads to geekforgeeks website.
+
 
 ### Acknowledgments
 I like to thank the follow persons for the help during the project:

@@ -233,7 +233,9 @@ The page was tested on different ways and different errors came to light.
 I have tested all input options, valid input and non-valid input by the user. These tests were carried out throughout the entire project process. Finally, no more errors occurred. The detailed error messages to the user are also explained in the features section. A description of the bugs can be found in solved and unsolved bugs.
 
 ### Slack peer groupe rewiew
-I have not yet received an answer.
+Aleksandar Javorovic tested my programm and he found a small bug. In the playing section, when entering digits 1-5, the system still accepted a blank space or multiple spaces followed by a number as a valid input. Therefore I have modified the player_choice function and at the same time simplified it so that this error no longer occurs. The function now also checks for spaces in the input field.
+![Spaces error](images/error-spaces-play-screen.png "Spaces error")
+
 
 ### Validator tests
 CI Python Linter:

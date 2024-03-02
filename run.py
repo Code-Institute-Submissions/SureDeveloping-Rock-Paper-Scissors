@@ -61,34 +61,40 @@ def start_game():
         taken into account and handled.
         """
         options_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        player_choice_num = None
         while True:
-            try:
-                player_choice_num = int(input(f"{Fore.YELLOW}{user_name}"
-                                              f"{Fore.RESET}, "
-                                              "please choose:\n"
-                                              f"{Back.MAGENTA} 1)"
-                                              f"{Back.RESET} for Rock\n"
-                                              f"{Back.MAGENTA} 2)"
-                                              f"{Back.RESET} for Paper\n"
-                                              f"{Back.MAGENTA} 3)"
-                                              f"{Back.RESET} for Scissors\n"
-                                              f"{Back.MAGENTA} 4)"
-                                              f"{Back.RESET} for Lizard\n"
-                                              f"{Back.MAGENTA} 5)"
-                                              f"{Back.RESET} for Spock\n"
-                                              "Your selection: "))-1
-                print()
-                if player_choice_num not in range(5):
-                    print("")
-                    raise ValueError("Invalid input."
-                                     "Please enter a number between 1 and 5.")
+            player_choice_num = input(f"{Fore.YELLOW}{user_name}"
+                                      f"{Fore.RESET}, "
+                                      "please choose:\n"
+                                      f"{Back.MAGENTA} 1)"
+                                      f"{Back.RESET} for Rock\n"
+                                      f"{Back.MAGENTA} 2)"
+                                      f"{Back.RESET} for Paper\n"
+                                      f"{Back.MAGENTA} 3)"
+                                      f"{Back.RESET} for Scissors\n"
+                                      f"{Back.MAGENTA} 4)"
+                                      f"{Back.RESET} for Lizard\n"
+                                      f"{Back.MAGENTA} 5)"
+                                      f"{Back.RESET} for Spock\n"
+                                      "Your selection: ")
 
-                player_choice = options_list[player_choice_num]
-                print(Fore.YELLOW+"You choose: " + player_choice+Fore.RESET)
-                return player_choice
-            except ValueError as ve:
-                print("")
-                print("Invalid input. Please enter a number between 1 and 5.")
+            print()
+            if not (" " in player_choice_num or not
+                    player_choice_num.isdigit()):
+                player_choice_num = int(player_choice_num) - 1
+
+                if player_choice_num in range(5):
+                    player_choice = options_list[player_choice_num]
+                    print(Fore.YELLOW + "You choose: "
+                          + player_choice + Fore.RESET)
+                    return player_choice
+
+            print("Invalid input. Please enter a number between 1 and 5.\n"
+                  "No other characters except the numbers 1-5 are valid.")
+
+        player_choice = options_list[player_choice_num]
+        print(Fore.YELLOW + "You choose: " + player_choice + Fore.RESET)
+        return player_choice
 
     def find_winner(computer_choice, player_choice):
         """

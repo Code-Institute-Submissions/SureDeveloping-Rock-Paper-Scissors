@@ -7,9 +7,9 @@ Portfolio Project 3 – User SureDeveloping – Code Institute
 
 The program created is an online game. It is called Rock-Paper-Scissors Extended. Compared to the classic rock-paper-scissors game, this version has the additional items Lizard and Spock to add more variety to the game. This variant is known from the TV series "The Big Band Theory". The game is based on chance and luck. You can find more information about the general idea of the game on Wikipedia.
 <br>
-[Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of pock paper scissors.<br>
+[Wikipedia](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to the Wikipedia page of rock paper scissors.<br>
 Here is the link to my Depolyed project:<br>
-[Rock-Paper-Scissors Extended](https://en.wikipedia.org/wiki/Rock_paper_scissors) Leads to my deployed project.
+[Rock-Paper-Scissors Extended](https://rock-paper-scissors-extended-deb9cc84e988.herokuapp.com/) Leads to my deployed project.
 
 ### Contents
 
@@ -17,9 +17,9 @@ Here is the link to my Depolyed project:<br>
 [Introduction to the project](#introduction-to-the-project) \
 [Contents](#contents) \
 [Game play](#gameplay) \
-[User experience (UX)](#user-experience)\
-[Target audience](#target-audience)\
+[User experience (UX)](#user-experience-ux)\
 [User story](#user-story)\
+[Target audience](#target-audience)\
 [Flow Chart](#flow-chart) \
 [Features](#features) \
 [Technologies used](#technologies-used) \
@@ -61,7 +61,7 @@ The player can play as often as he likes. It is possible to quit the game after 
 
 ## User experience (UX)
 
-### Target audience of the website
+### Target audience
 
 - People who like Browsergamers.
 - People who want to pass some free time.
@@ -232,7 +232,7 @@ The page was tested on different ways and different errors came to light.
 ### Manual testing
 I have tested all input options, valid input and non-valid input by the user. These tests were carried out throughout the entire project process. Finally, no more errors occurred. The detailed error messages to the user are also explained in the features section. A description of the bugs can be found in solved and unsolved bugs.
 
-### Slack peer groupe rewiew
+### Slack peer group rewiew
 Aleksandar Javorovic tested my programm and he found a small bug. In the playing section, when entering digits 1-5, the system still accepted a blank space or multiple spaces followed by a number as a valid input. Therefore I have modified the player_choice function and at the same time simplified it so that this error no longer occurs. The function now also checks for spaces in the input field.
 ![Spaces error](images/error-spaces-play-screen.png "Spaces error")
 

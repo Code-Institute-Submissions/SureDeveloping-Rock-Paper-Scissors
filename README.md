@@ -149,16 +149,20 @@ If the player enters anything other than a number between 1 and 5, the player is
 Once the player has made a valid selection, his choice is compared with that of the computer and the winner is announced. The computer's choice and the player's choice are displayed.  If the player has won, this is displayed. At the same time, he sees an overview of how many rounds he has played, how many he has won and how many he has lost. He can also see how many were undecided. In addition, reasons are always given as to why he won or lost. 
 He is also asked at the end whether he wants to play another round, in which case he should press P, or whether he wants to stop, in which case he should press Q. The letters may be upper or lower case.
 
-This is a screen when the player wins:
+This is a screen when the player wins:<br>
+
 ![Win screen](images/you-win.png "Win screen")
 
-This is a screen when the player loses:
+This is a screen when the player loses:<br>
+
 ![Loose screen](images/you-loose.png "Loose screen")
 
-This is a screen of a draw:
+This is a screen of a draw:<br>
+
 ![Draw screen](images/draw-screen.png "Draw screen")
 
-When the player selects Q, he will be taken to a farewell screen:
+When the player selects Q, he will be taken to a farewell screen:<br>
+
 ![Quit screen](images/quit-screen.png "Quit screen")
 
 Future Implementations:

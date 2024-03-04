@@ -91,7 +91,8 @@ def start_game():
                           + player_choice + Fore.RESET)
                     return player_choice
 
-            print("Invalid input. Please enter a number between 1 and 5.\n"
+            print("Invalid input. Please enter only one number "
+                  "between 1 and 5.\n"
                   "No other characters are valid.")
 
         player_choice = options_list[player_choice_num]
